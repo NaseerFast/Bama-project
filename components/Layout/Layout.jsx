@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Footer from './Footer';
+// import Footer from '../../page-components/UI/footer'
 import styles from './Layout.module.css';
 import Nav from './Nav';
 
@@ -29,6 +30,8 @@ const Layout = ({ children }) => {
       </Head>
       <Nav />
       <main className={styles.main}>{children}</main>
+      {/* <Footer />
+      <Footer /> */}
       <Footer />
     </>
   );

@@ -1,16 +1,16 @@
-import Head from "next/head";
-import Hero from "../page-components/UI/hero";
-import Navbar from "../page-components/UI/navbar";
-import SectionTitle from "../page-components/UI/sectionTitle";
+import Head from 'next/head';
+import Hero from '../page-components/UI/hero';
+// import Navbar from '../page-components/UI/navbar';
+import SectionTitle from '../page-components/UI/sectionTitle';
 
-import { benefitOne, benefitTwo } from "../page-components/UI/data";
-import Video from "../page-components/UI/video";
-import Benefits from "../page-components/UI/benefits";
-import Footer from "../page-components/UI/footer";
-import Testimonials from"../page-components/UI/testimonials";
-import Cta from"../page-components/UI/cta";
-import Faq from "../page-components/UI/faq";
-import PopupWidget from "../page-components/UI/popupWidget";
+import { benefitOne, benefitTwo } from '../page-components/UI/data';
+// import Video from '../page-components/UI/video';
+import Benefits from '../page-components/UI/benefits';
+// import Footer from '../page-components/UI/footer';
+import Testimonials from '../page-components/UI/testimonials';
+import Cta from '../page-components/UI/cta';
+import Faq from '../page-components/UI/faq';
+import PopupWidget from '../page-components/UI/popupWidget';
 
 const Home = () => {
   return (
@@ -24,12 +24,14 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-       {/* <Navbar /> */}
-      <Hero /> 
-      <SectionTitle
-        pretitle="About"
-        title="  Empower, Learn, Succeed">
-        The B-Empowerment Program is the cornerstone of job creation and skill empowerment initiated by the Bama Local Government. We are committed to uplifting individuals by providing them with the tools and opportunities to build a prosperous future. Join us in our mission to empower, elevate, and enrich the community through skills and jobs.
+      {/* <Navbar /> */}
+      <Hero />
+      <SectionTitle pretitle="About" title="  Empower, Learn, Succeed">
+        The B-Empowerment Program is the cornerstone of job creation and skill
+        empowerment initiated by the Bama Local Government. We are committed to
+        uplifting individuals by providing them with the tools and opportunities
+        to build a prosperous future. Join us in our mission to empower,
+        elevate, and enrich the community through skills and jobs.
       </SectionTitle>
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
@@ -43,7 +45,8 @@ const Home = () => {
       {/* <Video /> */}
       <SectionTitle
         pretitle="Testimonials"
-        title="Here's what our customers said">
+        title="Here's what our customers said"
+      >
         Testimonails is a great way to increase the brand trust and awareness.
         Use this section to highlight your popular customers.
       </SectionTitle>
@@ -58,6 +61,6 @@ const Home = () => {
       <PopupWidget />
     </>
   );
-}
+};
 
 export default Home;

@@ -9,8 +9,7 @@ const FeedPage = () => {
       <Head>
         <title>Applicant Page</title>
       </Head>
-      {/* <Feed /> */}
-      
+      <Feed />
     </>
   );
 };
