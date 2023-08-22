@@ -123,8 +123,8 @@ const ApplicationPosterInner = ({ user }) => {
     { label: 'DRIVERS LISCENCE', value: 'LISCENCE' },
   ];
   return (
-    <div className="container">
-    <form className="application-form" onSubmit={onSubmit}>
+    <div className="container ">
+    <form className="application-form " onSubmit={onSubmit}>
       {/* <Container className={styles.poster}> */}
         {/* <Avatar size={40} username={user.username} url={user.profilePicture} /> */}
         
