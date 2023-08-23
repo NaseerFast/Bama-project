@@ -23,7 +23,7 @@ const IndexPage = () => {
   return (
     <>
       <Head>
-        <title>Nextly - Free Nextjs & TailwindCSS Landing Page Template</title>
+        <title>B-Empowerment - Job Creation & Skill empowerment Program</title>
         <meta
           name="description"
           content="Nextly is a free landing page template built with next.js & Tailwind CSS"
