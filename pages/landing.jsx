@@ -43,10 +43,7 @@ const Home = () => {
         don&apos;t forget to add one. Just like this.
       </SectionTitle> */}
       {/* <Video /> */}
-      <SectionTitle
-        pretitle="Testimonials"
-        title="Here's what  people said"
-      >
+      <SectionTitle pretitle="Testimonials" title="Here's what  people said">
         Testimonails is a great way to increase the brand trust and awareness.
         Use this section to highlight your popular customers.
       </SectionTitle>
