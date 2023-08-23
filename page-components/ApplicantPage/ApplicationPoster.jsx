@@ -377,7 +377,7 @@ const ApplicationPosterInner = ({ user }) => {
         </div> */}
         </div>
 
-        <button type="submit">Submit Application</button>
+        <button type="submit" className='bg-green-600'>Submit Application</button>
       {/* </Container> */}
     </form>
 
@@ -429,7 +429,7 @@ const ApplicationPosterInner = ({ user }) => {
           margin: 0 auto;
           padding: 0.75rem 2rem;
           font-size: 1.2rem;
-          background-color: #0070f3;
+    
           color: white;
           border: none;
           border-radius: 5px;

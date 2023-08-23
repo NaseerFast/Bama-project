@@ -39,7 +39,7 @@ const SignUp = () => {
         });
         mutate({ user: response.user }, false);
         toast.success('Your account has been created');
-        router.replace('/feed');
+        router.replace('/application');
       } catch (e) {
         toast.error(e.message);
       } finally {
@@ -79,7 +79,7 @@ const SignUp = () => {
           />
           <Spacer size={0.75} axis="vertical" />
           <Container alignItems="center">
-            <p className={styles.subtitle}>About you</p>
+            <p className={styles.subtitle}>User Name</p>
             <div className={styles.seperator} />
           </Container>
           <Input
@@ -94,7 +94,7 @@ const SignUp = () => {
           <Input
             ref={nameRef}
             autoComplete="name"
-            placeholder="Your name"
+            placeholder="Your Full name"
             ariaLabel="Your name"
             size="large"
             required
