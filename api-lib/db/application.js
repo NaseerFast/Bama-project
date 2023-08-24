@@ -50,7 +50,7 @@ export async function findApplications(db, before, by, limit = 10) {
 }
 
 export async function insertApplication(db, {  creatorId, firstname, 
-    middlename,lastname, email, gender, dateofbirth, phone, residentialaddress,
+    middlename,lastname, email, gender, dateofbirth, phone, residentialaddress, district,
     landmark,
     qualification,
     instituition,
@@ -72,6 +72,7 @@ export async function insertApplication(db, {  creatorId, firstname,
     dateofbirth,
     phone,
     residentialaddress,
+    district,
     landmark,
     qualification,
     instituition,

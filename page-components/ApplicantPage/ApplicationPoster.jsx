@@ -25,6 +25,7 @@ const ApplicationPosterInner = ({ user }) => {
   const dateofbirthRef = useRef();
   const phoneRef = useRef();
   const residentialaddressRef = useRef();
+  const districtRef = useRef();
   const landmarkRef = useRef();
   const qualificationtypeRef = useRef();
   const instituitionRef = useRef();
@@ -84,6 +85,7 @@ const ApplicationPosterInner = ({ user }) => {
         dateofbirthRef.current.value = '';
         phoneRef.current.value = '';
         residentialaddressRef.current.value = '';
+        districtRef.current.value = '';
         landmarkRef.current.value = '';
         qualificationtypeRef.current.value = '';
         instituitionRef.current.value = '';
@@ -122,6 +124,14 @@ const ApplicationPosterInner = ({ user }) => {
     { label: 'NATIONAL ID', value: 'NIN' },
     { label: 'DRIVERS LISCENCE', value: 'LISCENCE' },
   ];
+
+  const district = [
+    { label: 'District', value: '' },
+    { label: 'Bama District', value: 'BAMA' },
+    { label: 'Gulumba District', value: 'GULUMBA' },
+    {label:  'Woloji District', value: 'WOLOJI'},
+
+  ];
   return (
     <div className="container ">
     <form className="application-form " onSubmit={onSubmit}>
@@ -130,12 +140,13 @@ const ApplicationPosterInner = ({ user }) => {
         
           <div className="form-card">
          <div className="form-group">
+         <h3 className="sub-header">Personal Information</h3>
             {/* <label htmlFor="firstName">First Name</label> */}
             <Input
               label="First Name"
                 ref={firstnameRef}
               className={styles.input}
-              placeholder={'first name'}
+              placeholder={'First name'}
               ariaLabel={'First Name'}
             />
           </div>
@@ -156,7 +167,7 @@ const ApplicationPosterInner = ({ user }) => {
             label="Last Name"
                 ref={lastnameRef}
               className={styles.input}
-              placeholder={'surname'}
+              placeholder={'Surname'}
               ariaLabel={'Last Name'}
             />
           </div> 
@@ -168,7 +179,7 @@ const ApplicationPosterInner = ({ user }) => {
             label="Email"
                 ref={emailRef}
               className={styles.input}
-              placeholder={'yourname@domain.com'}
+              placeholder={'Yourname@domain.com'}
               ariaLabel={'Email'}
             />
           </div>
@@ -206,7 +217,7 @@ const ApplicationPosterInner = ({ user }) => {
               label="Phone Number"
               ref={phoneRef}
               className={styles.input}
-              placeholder={'07012674001'}
+              placeholder={'Eg: 0701245****'}
               ariaLabel={'Phone number'}
             />
           </div>
@@ -233,8 +244,19 @@ const ApplicationPosterInner = ({ user }) => {
               label="Closest Landmark"
               ref={landmarkRef}
               className={styles.input}
-              placeholder={'nearest bus stop'}
+              placeholder={'Nearest bus stop'}
               ariaLabel={'Closest Land Mark'}
+            />
+          </div>
+
+          <div className="form-group">
+            <Select
+              ref={districtRef}
+              options={district}
+              size="large" // Optional: You can customize the size class
+              ariaLabel="District"
+              required
+              defaultValue="option1" // Optional: Set the default selected value
             />
           </div>
           {/* ... other experience fields */ }
@@ -261,7 +283,7 @@ const ApplicationPosterInner = ({ user }) => {
              label="Instituition"
                 ref={instituitionRef}
               className={styles.input}
-              placeholder={'name of instituition '}
+              placeholder={'Name of instituition '}
               ariaLabel={'Name of instituition'}
             />
           </div>
@@ -271,7 +293,7 @@ const ApplicationPosterInner = ({ user }) => {
              label="Course of Study"
                 ref={courseRef}
               className={styles.input}
-              placeholder={'course of study '}
+              placeholder={'Course of study '}
               ariaLabel={'Course Of Study'}
             />
           </div>
@@ -282,7 +304,7 @@ const ApplicationPosterInner = ({ user }) => {
                 ref={yearofgraduationRef}
                 label="Year of Graduation"
               className={styles.input}
-              placeholder={'year graduated '}
+              placeholder={'Year graduated '}
               ariaLabel={'Year of Graduation'}
             />
           </div>
@@ -400,7 +422,7 @@ const ApplicationPosterInner = ({ user }) => {
           background-color: white;
         }
         .sub-header{
-
+          margin-bottom: 1.5rem;
         }
 
         h2 {
