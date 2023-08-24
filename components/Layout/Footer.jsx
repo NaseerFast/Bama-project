@@ -29,7 +29,7 @@ const Footer = () => {
                     fillRule="nonzero"
                   />
                 </svg> */}
-                B-Empowerment Portal
+                BAM-POWER
               </a>
               {/* <p className="mt-2 text-sm text-gray-500">
                 Design, Code and Ship!

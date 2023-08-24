@@ -20,11 +20,11 @@ import Cta from '../page-components/UI/cta';
 import Faq from '../page-components/UI/faq';
 import PopupWidget from '../page-components/UI/popupWidget';
 
-const IndexPage = () => {
+const AboutPage = () => {
   return (
     <>
       <Head>
-        <title>BAM-POWER - Job Creation & Skill empowerment Program</title>
+        <title>B-Empowerment - Job Creation & Skill empowerment Program</title>
         <meta
           name="description"
           content="Nextly is a free landing page template built with next.js & Tailwind CSS"
@@ -33,14 +33,14 @@ const IndexPage = () => {
       </Head>
 
       {/* <Navbar /> */}
-      <Hero />
+      {/* <Hero /> */}
       <SectionTitle pretitle="About" title="  Empower, Learn, Succeed">
-      BAM-POWER will be making smart and effective investments in people’s education, which is critical for developing the human capital that will end extreme poverty and illiteracy. At the core of this strategy is the need to tackle the learning crisis, put an end to Insecurity and Learning Poverty, and help youth acquire the advanced cognitive, socioemotional, technical and digital skills they need to succeed in today’s world.
+      BAM Power will be making smart and effective investments in people’s education, which is critical for developing the human capital that will end extreme poverty and illiteracy. At the core of this strategy is the need to tackle the learning crisis, put an end to Insecurity and Learning Poverty, and help youth acquire the advanced cognitive, socioemotional, technical and digital skills they need to succeed in today’s world.
 
       </SectionTitle>
       {/* <Benefits data={benefitOne} /> */}
       <Statements data={statementOne}/>
-      <Benefits imgPos="right" data={benefitTwo} />
+      {/* <Benefits imgPos="right" data={benefitTwo} /> */}
       {/* <SectionTitle
         pretitle="Watch a video"
         title="Learn how to fullfil your needs">
@@ -66,4 +66,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default AboutPage;

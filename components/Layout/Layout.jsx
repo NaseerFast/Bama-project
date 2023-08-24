@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Next.js MongoDB App</title>
+        <title>BAM-POWER</title>
         <meta
           key="viewport"
           name="viewport"

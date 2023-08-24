@@ -26,7 +26,7 @@ const Testimonials  = () => {
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-xl leading-normal ">
-            Skills gained through B-Programme Program transformed me. Bama Local Government's impact is truly commendable.
+            Skills gained through BAM-POWER Program transformed me. Bama Local Government's impact is truly commendable.
             </p>
 
             <Avatar
@@ -39,7 +39,7 @@ const Testimonials  = () => {
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-xl leading-normal ">
-            B-Empowerment Program's exceptional support reshaped my career. Bama Local Government's commitment shines brightly.
+            BAM-POWER Program's exceptional support reshaped my career. Bama Local Government's commitment shines brightly.
             </p>
 
             <Avatar
