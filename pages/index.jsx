@@ -6,7 +6,7 @@
 
 // export default IndexPage;
 import Head from 'next/head';
-// import Hero from '../page-components/UI/hero';
+import Hero from '../page-components/UI/hero';
 // import Navbar from '../page-components/UI/navbar';
 import SectionTitle from '../page-components/UI/sectionTitle';
 
@@ -20,8 +20,21 @@ import Cta from '../page-components/UI/cta';
 import Faq from '../page-components/UI/faq';
 import PopupWidget from '../page-components/UI/popupWidget';
 import HeroTwo from '@/page-components/Hero2';
+import { useState, useEffect } from 'react';
 
 const IndexPage = () => {
+
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial width
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <>
       <Head>
@@ -34,8 +47,15 @@ const IndexPage = () => {
       </Head>
 
       {/* <Navbar /> */}
-      <HeroTwo />
-      {/* <Hero /> */}
+      <div>
+      {windowWidth <= 768 ? (
+        <HeroTwo />
+      ) : (
+        <div><Hero /> </div>
+      )}
+    </div>
+      
+      {/* */}
       {/* <SwiperHero /> */}
       <SectionTitle title=" ABOUT BAM-POWER">
         <span className="w-full text-justify">

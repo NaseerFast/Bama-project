@@ -35,19 +35,6 @@ const Hero = () => {
 <SwiperSlide>
       <Container className="flex flex-wrap ">
 
-      <div className=" block lg:hidden flex items-center justify-center w-full lg:w-1/2">
-          <div className="">
-            <Image
-              src={heroImg}
-              width="616"
-              height="617"
-              className={"object-cover"}
-              alt="Hero Illustration"
-              loading="eager"
-              placeholder="blur"
-            />
-          </div>
-        </div>
 
 
         <div className="flex items-center w-full lg:w-1/2">
@@ -90,7 +77,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className=" hidden lg:block flex items-center justify-center w-full lg:w-1/2">
+        <div className="  flex items-center justify-center w-full lg:w-1/2">
           <div className="">
             <Image
               src={heroImg}
@@ -111,19 +98,7 @@ const Hero = () => {
       <SwiperSlide>
       <Container className="flex flex-wrap ">
 
-      <div className=" block lg:hidden flex items-center justify-center w-full lg:w-1/2">
-          <div className="">
-            <Image
-              src={heroImg2}
-              width="616"
-              height="617"
-              className={"object-cover"}
-              alt="Hero Illustration"
-              loading="eager"
-              placeholder="blur"
-            />
-          </div>
-        </div>
+      
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
             <h1 className="text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight  xl:leading-tight dark:text-white">
@@ -164,7 +139,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="hidden lg:block flex items-center justify-center w-full lg:w-1/2">
+        <div className=" flex items-center justify-center w-full lg:w-1/2">
           <div className="">
             <Image
               src={heroImg2}
