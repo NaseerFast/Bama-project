@@ -39,9 +39,9 @@ const HeroTwo = () => {
 <SwiperSlide>
      {/* <Container className="flex flex-wrap "> */}
 
-    <section class="px-3 py-5 bg-neutral-100 lg:py-10">
-  <div class=" grid lg:grid-cols-2 items-center justify-items-center gap-5">
-    <div class="order-2 lg:order-1 flex flex-col justify-center items-center pl-8">
+    <section className="px-3 py-5 bg-neutral-100 lg:py-10">
+  <div className=" grid lg:grid-cols-2 items-center justify-items-center gap-5">
+    <div className="order-2 lg:order-1 flex flex-col justify-center items-center pl-8">
     <h1 className="text-2xl font-bold leading-snug tracking-tight text-gray-800 lg:text-3xl lg:leading-tight  xl:leading-tight dark:text-white">
            
            Welcome to the Bama Education Empowerment Programme (BAM-POWER) Portal
@@ -58,8 +58,8 @@ const HeroTwo = () => {
                 className=" mt-3 px-8 py-4 text-lg font-medium text-center text-white bg-green-600 rounded-md ">
                 Start Application
               </a>    </div>
-    <div class="order-1 lg:order-2">
-      <img class="h-80 w-80 object-cover lg:w-[600px] lg:h-[600px]" src="/img/zullum.jpg" alt=""/>
+    <div className="order-1 lg:order-2">
+      <img className="h-80 w-80 object-cover lg:w-[600px] lg:h-[600px]" src="/img/zullum.jpg" alt=""/>
     </div>
   </div>
 </section>
@@ -69,9 +69,9 @@ const HeroTwo = () => {
 
 <SwiperSlide>
      {/* <Container className="flex flex-wrap "> */}
-     <section class="px-3 py-5 bg-neutral-100 lg:py-10">
-  <div class=" grid lg:grid-cols-2 items-center justify-items-center gap-5">
-    <div class="order-2 lg:order-1 flex flex-col justify-center items-center pl-8">
+     <section className="px-3 py-5 bg-neutral-100 lg:py-10">
+  <div className=" grid lg:grid-cols-2 items-center justify-items-center gap-5">
+    <div className="order-2 lg:order-1 flex flex-col justify-center items-center pl-8">
     <h1 className="text-2xl font-bold leading-snug tracking-tight text-gray-800 lg:text-3xl lg:leading-tight  xl:leading-tight dark:text-white">
            
            Welcome to the Bama Education Empowerment Programme (BAM-POWER) Portal
@@ -86,8 +86,8 @@ const HeroTwo = () => {
                 className=" mt-3 px-8 py-4 text-lg font-medium text-center text-white bg-green-600 rounded-md ">
                 Start Application
               </a>    </div>
-    <div class="order-1 lg:order-2">
-      <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="/img/grema.jpg"  alt=""/>
+    <div className="order-1 lg:order-2">
+      <img className="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="/img/grema.jpg"  alt=""/>
     </div>
   </div>
 </section>

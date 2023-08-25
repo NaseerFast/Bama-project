@@ -23,7 +23,6 @@ import HeroTwo from '@/page-components/Hero2';
 import { useState, useEffect } from 'react';
 
 const IndexPage = () => {
-
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
@@ -48,13 +47,15 @@ const IndexPage = () => {
 
       {/* <Navbar /> */}
       <div>
-      {windowWidth <= 768 ? (
-        <HeroTwo />
-      ) : (
-        <div><Hero /> </div>
-      )}
-    </div>
-      
+        {windowWidth <= 768 ? (
+          <HeroTwo />
+        ) : (
+          <div>
+            <Hero />{' '}
+          </div>
+        )}
+      </div>
+
       {/* */}
       {/* <SwiperHero /> */}
       <SectionTitle title=" ABOUT BAM-POWER">
