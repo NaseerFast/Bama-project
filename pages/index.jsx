@@ -6,7 +6,7 @@
 
 // export default IndexPage;
 import Head from 'next/head';
-import Hero from '../page-components/UI/hero';
+// import Hero from '../page-components/UI/hero';
 // import Navbar from '../page-components/UI/navbar';
 import SectionTitle from '../page-components/UI/sectionTitle';
 
@@ -19,6 +19,7 @@ import Testimonials from '../page-components/UI/testimonials';
 import Cta from '../page-components/UI/cta';
 import Faq from '../page-components/UI/faq';
 import PopupWidget from '../page-components/UI/popupWidget';
+import HeroTwo from '@/page-components/Hero2';
 
 const IndexPage = () => {
   return (
@@ -33,7 +34,8 @@ const IndexPage = () => {
       </Head>
 
       {/* <Navbar /> */}
-      <Hero />
+      <HeroTwo />
+      {/* <Hero /> */}
       {/* <SwiperHero /> */}
       <SectionTitle title=" ABOUT BAM-POWER">
         <span className="w-full text-justify">
