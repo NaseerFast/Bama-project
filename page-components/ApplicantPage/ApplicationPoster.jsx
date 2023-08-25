@@ -469,7 +469,7 @@ const ApplicationPoster = () => {
   return (
     <Wrapper>
       <div className={styles.root}>
-        <h3 className={styles.heading}>Fill in your information</h3>
+        <h3 className={styles.heading}>APPLICATION FORM</h3>
         {loading ? (
           <LoadingDots>Loading</LoadingDots>
         ) : data?.user ? (
