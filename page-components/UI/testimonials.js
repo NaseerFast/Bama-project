@@ -13,39 +13,39 @@ const Testimonials  = () => {
         <div className="lg:col-span-2 xl:col-auto">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-xl leading-normal ">
-            This  Program unlocked opportunities and skills that propelled my career. Bama Local Government transformed lives!"
+            &#8220;Education is the foundation for a more just, equitable, and sustainable world.&#8221;
             </p>
 
             <Avatar
               image={userOneImg}
-              name="Sarah Steiner"
-              title="VP Sales at Google"
+              name="UNESCO"
+              title="International Organization"
             />
           </div>
         </div>
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-xl leading-normal ">
-            Skills gained through BAM-POWER Program transformed me. Bama Local Government's impact is truly commendable.
+            &#8220;Let us pick up our books and our pens. They are our most powerful weapons. One child, one teacher, one book and one pen can change the world.&#8221;
             </p>
 
             <Avatar
               image={userTwoImg}
-              name="Dylan Ambrose"
-              title="Lead marketer at Netflix"
+              name="Malala Yousafzai"
+              title="Female Education Activist"
             />
           </div>
         </div>
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-xl leading-normal ">
-            BAM-POWER Program's exceptional support reshaped my career. Bama Local Government's commitment shines brightly.
+            &#8220;Education is a powerful tool for self-empowerment in the 21st Century.&#8221;
             </p>
 
             <Avatar
               image={userThreeImg}
-              name="Gabrielle Winn"
-              title="Co-founder of Acme Inc"
+              name="Grema Terab"
+              title="Honourable Chairman, Bama Local governement"
             />
           </div>
         </div>

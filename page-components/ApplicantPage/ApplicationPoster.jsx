@@ -123,12 +123,17 @@ const ApplicationPosterInner = ({ user }) => {
     { label: 'ID Type', value: '' },
     { label: 'NATIONAL ID', value: 'NIN' },
     { label: 'DRIVERS LISCENCE', value: 'LISCENCE' },
+    { label: 'OTHER', value: 'OTHER' },
   ];
 
   const district = [
     { label: 'District', value: '' },
-    { label: 'Bama District', value: 'BAMA' },
+    { label: 'Bama(Rural) District', value: 'BAMA-RURAL' },
+    { label: 'Bama Town', value: 'BAMA-TOWN' },
+    {label:  'Amchaka District', value: 'AMCHAKA'},
+    { label: 'Dar-eljamal District', value: 'DAR-ELJAMAL' },
     { label: 'Gulumba District', value: 'GULUMBA' },
+    { label: 'Soye District', value: 'SOYE' },
     {label:  'Woloji District', value: 'WOLOJI'},
 
   ];
@@ -202,7 +207,7 @@ const ApplicationPosterInner = ({ user }) => {
             {/* <label htmlFor="dateofbirth">Date Of Birth</label> */}
 
             <DateInput
-              label="Select a Date"
+              label="Date of birth"
               placeholder="YYYY-MM-DD"
               autoComplete="off"
               ref={dateofbirthRef}
@@ -222,6 +227,20 @@ const ApplicationPosterInner = ({ user }) => {
             />
           </div>
 
+          <div className="form-group">
+         {/* <label htmlFor="crt">Upload Certificate </label>  */}
+            <FileUpload
+              ref={certificatefileRef}
+              label="Upload  certificate of indigine"
+              htmlType="file"
+              accept="image/*"
+              onChange={(event) => {
+                const selectedFile = event.target.files[0];
+                // Do something with the selected file
+              }}
+            />
+          </div>
+
           </div>
 
           
@@ -230,7 +249,7 @@ const ApplicationPosterInner = ({ user }) => {
           <div className="form-group">
             {/* <label htmlFor="residentialAddress">Residential Address</label> */}
             <Input
-              placeholder="house address"
+              placeholder="House address"
               label="Address"
                 ref={residentialaddressRef}
               className={styles.input}
@@ -267,7 +286,7 @@ const ApplicationPosterInner = ({ user }) => {
           <div className="form-group">
             {/* <label htmlFor="education">Education</label> */}
             <Select
-            label="Education"
+            label="Highest Qualification"
                ref={qualificationtypeRef}
               options={qualification}
               size="large" // Optional: You can customize the size class
@@ -283,7 +302,7 @@ const ApplicationPosterInner = ({ user }) => {
              label="Instituition"
                 ref={instituitionRef}
               className={styles.input}
-              placeholder={'Name of instituition '}
+              placeholder={'Name of school attended '}
               ariaLabel={'Name of instituition'}
             />
           </div>
@@ -313,7 +332,7 @@ const ApplicationPosterInner = ({ user }) => {
          {/* <label htmlFor="crt">Upload Certificate </label>  */}
             <FileUpload
               ref={certificatefileRef}
-              label="Upload your Certificate"
+              label="Upload your BSC / NCE Certificate"
               htmlType="file"
               accept="image/*"
               onChange={(event) => {
