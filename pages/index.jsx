@@ -34,14 +34,15 @@ const IndexPage = () => {
 
       {/* <Navbar /> */}
       <Hero />
-      <SectionTitle pretitle="About" title="  Empower, Learn, Succeed">
-        BAM-POWER will be making smart and effective investments in people’s
+      {/* <SwiperHero /> */}
+      <SectionTitle  title=" ABOUT BAM-POWER">
+        <span className="w-full text-justify">BAM-POWER will be making smart and effective investments in people’s
         education, which is critical for developing the human capital that will
         end extreme poverty and illiteracy. At the core of this strategy is the
         need to tackle the learning crisis, put an end to Insecurity and
         Learning Poverty, and help youth acquire the advanced cognitive,
         socioemotional, technical and digital skills they need to succeed in
-        today’s world.
+        today’s world.</span>
       </SectionTitle>
       {/* <Benefits data={benefitOne} /> */}
       <Statements data={statementOne} />
@@ -54,14 +55,12 @@ const IndexPage = () => {
         don&apos;t forget to add one. Just like this.
       </SectionTitle> */}
       {/* <Video /> */}
-      <SectionTitle pretitle="Testimonials" title="Here's what  people said">
-        Testimonails is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
+      <SectionTitle pretitle="" title="Testimonials">
+        
       </SectionTitle>
       <Testimonials />
-      <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
+      <SectionTitle  title="Frequently Asked Questions">
+      
       </SectionTitle>
       <Faq />
       <Cta />

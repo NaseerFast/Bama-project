@@ -11,7 +11,7 @@ const paragraphs1 = ["Paragraph 1 content...", "Paragraph 2 content..."];
 const paragraphs2 = ["Paragraph 1 content...", "Paragraph 2 content..."];
   return (
     <>
-      <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap overflow-y-auto">
+      <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">
         <div
           className={`flex items-center justify-center w-full lg:w-1/2 ${
             props.imgPos === "right" ? "lg:order-1" : ""
@@ -19,8 +19,8 @@ const paragraphs2 = ["Paragraph 1 content...", "Paragraph 2 content..."];
           <div>
             <Image
               src={data.image}
-              width="616"
-              height="617"
+              width="316"
+              height="417"
               className={"object-cover"}
               alt="Hero Illustration"
               loading="eager"
@@ -44,7 +44,7 @@ const paragraphs2 = ["Paragraph 1 content...", "Paragraph 2 content..."];
               </p> */}
             </div>
 
-            <div className="w-full mt-5 ">
+            <div className="w-full mt-5  max-h-80 overflow-y-auto">
               {data.paragraphs.map((item, index) => (
                 <Statement key={index} title={item.title} icon={item.icon}>
                   {item.desc}
@@ -72,7 +72,7 @@ function Statement(props) {
     
   return (
     <>
-      <div className="flex items-start mt-8 space-x-3">
+      <div className="flex items-start mt- space-x-3 ">
         {/* <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-green-500 rounded-md w-11 h-11 ">
           {React.cloneElement(props.icon, {
             className: "w-7 h-7 text-green-50",
