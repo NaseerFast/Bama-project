@@ -9,6 +9,7 @@ const Statements = (props) => {
   
 const paragraphs1 = ["Paragraph 1 content...", "Paragraph 2 content..."];
 const paragraphs2 = ["Paragraph 1 content...", "Paragraph 2 content..."];
+
   return (
     <>
       <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">
@@ -19,7 +20,7 @@ const paragraphs2 = ["Paragraph 1 content...", "Paragraph 2 content..."];
           <div>
             <Image
               src={data.image}
-              width="316"
+              width="416"
               height="417"
               className={"object-cover"}
               alt="Hero Illustration"

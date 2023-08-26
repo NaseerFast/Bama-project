@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import Container from "./container";
 
-import userOneImg from "../../public/img/user1.jpg";
-import userTwoImg from "../../public/img/user2.jpg";
-import userThreeImg from "../../public/img/user3.jpg";
+import userOneImg from "../../public/img/UNESCO.png";
+import userTwoImg from "../../public/img/malala.jpg";
+import userThreeImg from "../../public/img/grema.jpg";
 
 const Testimonials  = () => {
   return (

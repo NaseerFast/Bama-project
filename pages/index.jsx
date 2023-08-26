@@ -80,7 +80,7 @@ const IndexPage = () => {
         don&apos;t forget to add one. Just like this.
       </SectionTitle> */}
       {/* <Video /> */}
-      <SectionTitle pretitle="" title="Testimonials"></SectionTitle>
+      <SectionTitle pretitle="" title="Educational Quotes"></SectionTitle>
       <Testimonials />
       <SectionTitle title="Frequently Asked Questions"></SectionTitle>
       <Faq />
