@@ -1,6 +1,6 @@
 // import { Feed } from '@/page-components/TestFeed';
 
-import { Feed } from '@/page-components/Feed';
+import { Feed } from '@/page-components/TestUpload/index';
 import Head from 'next/head';
 
 const FeedPage = () => {

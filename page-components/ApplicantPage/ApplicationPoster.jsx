@@ -20,13 +20,14 @@ const ApplicationPosterInner = ({ user }) => {
   const firstnameRef = useRef();
   // const middlenameRef = useRef();
   const lastnameRef = useRef();
-  const emailRef = useRef();
+  // const emailRef = useRef();
   const genderRef = useRef();
   const dateofbirthRef = useRef();
   const phoneRef = useRef();
+  const indigenefileRef = useRef();
   const residentialaddressRef = useRef();
   const districtRef = useRef();
-  const landmarkRef = useRef();
+  // const landmarkRef = useRef();
   const qualificationtypeRef = useRef();
   const instituitionRef = useRef();
   const yearofgraduationRef = useRef();
@@ -55,12 +56,14 @@ const ApplicationPosterInner = ({ user }) => {
             firstname: firstnameRef.current.value,
             // middle: middlenameRef.current.value,
             lastname: lastnameRef.current.value,
-            email: emailRef.current.value,
+            // email: emailRef.current.value,
             gender: genderRef.current.value,
             dateofbirth: dateofbirthRef.current.value,
             phone: phoneRef.current.value,
+            indigenefile: indigenefileRef.current.value,
             residentialaddress: residentialaddressRef.current.value,
-            landmark: landmarkRef.current.value,
+            district: districtRef.current.value,
+            // landmark: landmarkRef.current.value,
             qualification: qualificationtypeRef.current.value,
             instituition: instituitionRef.current.value,
             yearofgraduation:yearofgraduationRef.current.value,
@@ -80,13 +83,14 @@ const ApplicationPosterInner = ({ user }) => {
         firstnameRef.current.value = '';
         // middlenameRef.current.value = '';
         lastnameRef.current.value = '';
-        emailRef.current.value = '';
+        // emailRef.current.value = '';
         genderRef.current.value = '';
         dateofbirthRef.current.value = '';
         phoneRef.current.value = '';
         residentialaddressRef.current.value = '';
+        indigenefileRef.current.value = '';
         districtRef.current.value = '';
-        landmarkRef.current.value = '';
+        // landmarkRef.current.value = '';
         qualificationtypeRef.current.value = '';
         instituitionRef.current.value = '';
         yearofgraduationRef.current.value = '';
@@ -177,17 +181,18 @@ const ApplicationPosterInner = ({ user }) => {
             />
           </div> 
 
-          
+{/*           
           <div className="form-group">
-            {/* <label htmlFor="email">Email</label> */}
+            <label htmlFor="email">Email</label>
             <Input
-            label="Email"
-                ref={emailRef}
+              label="Email"
+              htmlType="email"
+              ref={emailRef}
               className={styles.input}
-              placeholder={'Yourname@domain.com'}
+              placeholder={`${user.email}`}
               ariaLabel={'Email'}
             />
-          </div>
+          </div> */}
 
 
           <div className="form-group">
@@ -230,7 +235,7 @@ const ApplicationPosterInner = ({ user }) => {
           <div className="form-group">
          {/* <label htmlFor="crt">Upload Certificate </label>  */}
             <FileUpload
-              ref={certificatefileRef}
+              ref={indigenefileRef}
               label="Upload  certificate of indigine"
               htmlType="file"
               accept="image/*"
@@ -257,8 +262,8 @@ const ApplicationPosterInner = ({ user }) => {
             />
           </div>
 
-          <div className="form-group">
-            {/* <label htmlFor="landMark">Land Mark </label> */}
+          {/* <div className="form-group">
+            <label htmlFor="landMark">Land Mark </label>
             <Input
               label="Closest Landmark"
               ref={landmarkRef}
@@ -266,7 +271,7 @@ const ApplicationPosterInner = ({ user }) => {
               placeholder={'Nearest bus stop'}
               ariaLabel={'Closest Land Mark'}
             />
-          </div>
+          </div> */}
 
           <div className="form-group">
             <Select
