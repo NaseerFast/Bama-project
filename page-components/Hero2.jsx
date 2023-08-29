@@ -3,7 +3,7 @@ import Container from "../page-components/UI/container";
 
 // import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper"; // Import the Autoplay module
 import heroImg from "../public/img/zullum.jpg";
-import heroImg2 from "../public/img/grema.jpg";
+import heroImg2 from "../public/img/hongrema3.jpeg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css/bundle';
@@ -87,7 +87,7 @@ const HeroTwo = () => {
                 Start Application
               </a>    </div>
     <div className="order-1 lg:order-2">
-      <img className="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="/img/grema.jpg"  alt=""/>
+      <img className="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="/img/hongrema3.jpeg"  alt=""/>
     </div>
   </div>
 </section>

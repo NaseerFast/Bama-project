@@ -3,10 +3,22 @@
 export const ValidateProps = {
   user: {
     username: { type: 'string', minLength: 1, maxLength: 20,  },
-    name: { type: 'string', minLength: 1, maxLength: 50,  },
     password: { type: 'string', minLength: 8,  },
     email: { type: 'string', minLength: 1 },
     bio: { type: 'string', minLength: 0, maxLength: 160 },
+    firstname: { type: 'string', minLength: 1, maxLength: 15,  },
+    lastname: { type: 'string', minLength: 1, maxLength: 15,  },
+    gender: { type: 'string', minLength: 4, maxLength: 20,  },
+    dateofbirth: { type: 'string', minLength: 1, maxLength: 50,  },
+    phone: { type: 'string', minLength: 11, maxLength:11,   },
+    residentialaddress: { type: 'string', minLength: 4, maxLength: 160,  },
+    district: { type: 'string', },
+    instituition: { type: 'string', minLength: 1,  },
+    yearofgraduation: { type: 'string',  },
+    qualification: { type: 'string', },
+    course: { type: 'string', minLength: 1, maxLength: 50 },
+    idtype: { type: 'string', minLength: 1,  },
+    idnumber: { type: 'string', minLength: 11, maxLength: 20,  },
   },
   post: {
     content: { type: 'string', minLength: 1, maxLength: 280 },

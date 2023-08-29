@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Container from "./container";
 import heroImg from "../../public/img/zullum.jpg";
-import heroImg2 from "../../public/img/grema.jpg";
+import heroImg2 from "../../public/img/hongrema3.jpeg";
 // import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper"; // Import the Autoplay module
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,7 +19,7 @@ const Hero = () => {
      spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3500,
           disableOnInteraction: false,
         }}
         pagination={{

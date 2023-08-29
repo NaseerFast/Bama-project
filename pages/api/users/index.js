@@ -15,18 +15,32 @@ handler.post(
     type: 'object',
     properties: {
       username: ValidateProps.user.username,
-      name: ValidateProps.user.name,
       password: ValidateProps.user.password,
       email: ValidateProps.user.email,
+      firstname: ValidateProps.user.firstname,
+      lastname: ValidateProps.user.lastname,
+      gender: ValidateProps.user.gender,
+      dateofbirth: ValidateProps.user.dateofbirth,
+      phone: ValidateProps.user.phone,
+      residentialaddress: ValidateProps.user.residentialaddress,
+      district: ValidateProps.user.district,
+      qualification: ValidateProps.user.qualification,
+      instituition: ValidateProps.user.instituition,
+      yearofgraduation: ValidateProps.user.yearofgraduation,
+      course: ValidateProps.user.course,
+      idtype: ValidateProps.user.idtype,
+      idnumber: ValidateProps.user.idnumber,
     },
-    required: ['username', 'name', 'password', 'email'],
+    required: ['username', 'firstname', 'password', 'email'],
     additionalProperties: false,
   }),
   ...auths,
   async (req, res) => {
     const db = await getMongoDb();
 
-    let { username, name, email, password } = req.body;
+    let { username, email, password, firstname, lastname, gender, dateofbirth, phone, residentialaddress, district, qualification, instituition, yearofgraduation, course, idtype, idnumber } = req.body;
+
+
     username = slugUsername(req.body.username);
     email = normalizeEmail(req.body.email);
     if (!isEmail(email)) {
@@ -51,8 +65,21 @@ handler.post(
       email,
       originalPassword: password,
       bio: '',
-      name,
       username,
+      firstname,
+      lastname,
+      gender, 
+      dateofbirth,
+      phone,
+      residentialaddress,
+      district,
+      qualification,
+      instituition,
+      yearofgraduation,
+      course,
+      idtype,
+      idnumber,
+      
     });
     req.logIn(user, (err) => {
       if (err) throw err;

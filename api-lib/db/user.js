@@ -53,15 +53,31 @@ export async function updateUserById(db, id, data) {
 
 export async function insertUser(
   db,
-  { email, originalPassword, bio = '', name, profilePicture, username }
+  { email, originalPassword, bio = '', profilePicture, username, firstname, lastname, gender, dateofbirth, phone, indigenefile,residentialaddress, district, qualification, instituition, yearofgraduation, course, certificatefile,  idtype, idnumber, idfile }
 ) {
   const user = {
     emailVerified: false,
     profilePicture,
     email,
-    name,
     username,
     bio,
+    firstname,
+    lastname,
+    gender,
+    dateofbirth, 
+    phone,
+    indigenefile, 
+    residentialaddress,
+    district,
+    qualification,
+    instituition,
+    yearofgraduation,
+    course,
+    certificatefile,
+    idtype,
+    idnumber,
+    idfile,
+    
   };
   const password = await bcrypt.hash(originalPassword, 10);
   const { insertedId } = await db
