@@ -108,11 +108,27 @@ const Auth = () => {
 
 const AboutYou = ({ user, mutate }) => {
   const usernameRef = useRef();
-  const nameRef = useRef();
+  const firstnameRef = useRef();
+  const lastnameRef = useRef();
+  const residentialaddressRef = useRef();
+  const indigenefileRef = useRef();
+  const instituitionRef = useRef();
+  const qualificationRef = useRef();
+  const courseRef = useRef();
+  const certificatefileRef = useRef();
+  const idtypeRef = useRef();
+  const idnumberRef = useRef();
+  const idfileRef = useRef();
   const bioRef = useRef();
   const profilePictureRef = useRef();
 
-  const [avatarHref, setAvatarHref] = useState(user.profilePicture);
+
+  const [indigeneHref, setIndigeneHref] = useState(user.indigenefile);
+  const [idHref, setIdHref] = useState(user.idfile);
+  const [certHref, setCertHref] = useState(user.certificatefile);
+  const [avatarHref, setAvatarHref] = useState(user.profilePicture)
+
+  
   const onAvatarChange = useCallback((e) => {
     const file = e.currentTarget.files?.[0];
     if (!file) return;
@@ -123,6 +139,40 @@ const AboutYou = ({ user, mutate }) => {
     reader.readAsDataURL(file);
   }, []);
 
+  const onIndigeneChange = useCallback((e) => {
+    const file = e.currentTarget.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (l) => {
+      setIndigeneHref(l.currentTarget.result);
+    };
+    reader.readAsDataURL(file);
+  }, []);
+
+
+  const onIdChange = useCallback((e) => {
+    const file = e.currentTarget.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (l) => {
+      setIdHref(l.currentTarget.result);
+    };
+    reader.readAsDataURL(file);
+  }, []);
+
+
+
+  const onCertChange = useCallback((e) => {
+    const file = e.currentTarget.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (l) => {
+      setCertHref(l.currentTarget.result);
+    };
+    reader.readAsDataURL(file);
+  }, []);
+
+
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = useCallback(
@@ -132,10 +182,23 @@ const AboutYou = ({ user, mutate }) => {
         setIsLoading(true);
         const formData = new FormData();
         formData.append('username', usernameRef.current.value);
-        formData.append('name', nameRef.current.value);
+        formData.append('firstname', firstnameRef.current.value);
+        formData.append('lastname', lastnameRef.current.value);
         formData.append('bio', bioRef.current.value);
         if (profilePictureRef.current.files[0]) {
           formData.append('profilePicture', profilePictureRef.current.files[0]);
+        }
+
+        else if (indigenefileRef.current.files[0]) {
+          formData.append('indigenefile', indigenefileRef.current.files[0]);
+        }
+
+        else if (certificatefileRef.current.files[0]) {
+          formData.append('certificatefile', certificatefileRef.current.files[0]);
+        }
+
+        else if (idfileRef.current.files[0]) {
+          formData.append('idfile', idfileRef.current.files[0]);
         }
         const response = await fetcher('/api/user', {
           method: 'PATCH',
@@ -154,10 +217,18 @@ const AboutYou = ({ user, mutate }) => {
 
   useEffect(() => {
     usernameRef.current.value = user.username;
-    nameRef.current.value = user.name;
+    firstnameRef.current.value = user.firstname;
+    lastnameRef.current.value = user.lastname;
     bioRef.current.value = user.bio;
     profilePictureRef.current.value = '';
+    indigenefileRef.current.value = '';
+    certificatefileRef.current.value = '';
+    idfileRef.current.value = '';
     setAvatarHref(user.profilePicture);
+    setIndigeneHref(user.indigenefile);
+    setCertHref(user.certificatefile);
+    setIdHref(user.idfile);
+  
   }, [user]);
 
   return (
@@ -166,7 +237,8 @@ const AboutYou = ({ user, mutate }) => {
       <form onSubmit={onSubmit}>
         <Input ref={usernameRef} label="Your Username" />
         <Spacer size={0.5} axis="vertical" />
-        <Input ref={nameRef} label="Your Name" />
+        <Input ref={firstnameRef} label="Your First Name" />
+        <Input ref={lastnameRef} label="Your Last Name" />
         <Spacer size={0.5} axis="vertical" />
         <Textarea ref={bioRef} label="Your Bio" />
         <Spacer size={0.5} axis="vertical" />
@@ -182,6 +254,46 @@ const AboutYou = ({ user, mutate }) => {
           />
         </div>
         <Spacer size={0.5} axis="vertical" />
+
+        <div className={styles.avatar}>
+          <Avatar size={96} username={user.username} url={indigeneHref} />
+          <input
+            aria-label="Your Indigene"
+            type="file"
+            accept="image/*"
+            ref={indigenefileRef}
+            onChange={onIndigeneChange}
+          />
+
+          
+        </div>
+        <Spacer size={0.5} axis="vertical" />
+
+        <div className={styles.avatar}>
+          <Avatar size={96} username={user.username} url={certHref} />
+          <input
+            aria-label="Your Certificate"
+            type="file"
+            accept="image/*"
+            ref={certificatefileRef}
+            onChange={onCertChange}
+          />
+        </div>
+        <Spacer size={0.5} axis="vertical" />
+
+        <div className={styles.avatar}>
+          <Avatar size={96} username={user.username} url={idHref} />
+          <input
+            aria-label="Your Identiifcation"
+            type="file"
+            accept="image/*"
+            ref={idfileRef}
+            onChange={onIdChange}
+          />
+        </div>
+        <Spacer size={0.5} axis="vertical" />
+
+        
         <Button
           htmlType="submit"
           className={styles.submit}

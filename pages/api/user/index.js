@@ -33,7 +33,13 @@ handler.get(async (req, res) => {
 });
 
 handler.patch(
-  upload.single('profilePicture'),
+  upload.fields([
+    { name: 'profilePicture', maxCount: 1 },
+    { name: 'indigenefile', maxCount: 1 },
+    { name: 'profilePicture', maxCount: 1 },
+    { name: 'certificatefile', maxCount: 1 },
+    { name: 'idfile', maxCount: 1 },
+  ]),
   validateBody({
     type: 'object',
     properties: {
@@ -52,14 +58,48 @@ handler.patch(
     const db = await getMongoDb();
 
     let profilePicture;
-    if (req.file) {
-      const image = await cloudinary.uploader.upload(req.file.path, {
+    if (req.files['profilePicture']) {
+      const image = await cloudinary.uploader.upload(req.files['profilePicture'][0].path, {
         width: 512,
         height: 512,
         crop: 'fill',
       });
       profilePicture = image.secure_url;
     }
+
+    let indigenefile;
+    if (req.files['indigenefile']) {
+      const image = await cloudinary.uploader.upload(req.files['indigenefile'][0].path, {
+        width: 512,
+        height: 512,
+        crop: 'fill',
+      });
+      indigenefile = image.secure_url;
+    }
+
+
+    let certificatefile;
+    if (req.files['certificatefile']) {
+      const image = await cloudinary.uploader.upload(req.files['certificatefile'][0].path, {
+        width: 512,
+        height: 512,
+        crop: 'fill',
+      });
+      certificatefile = image.secure_url;
+    }
+
+    let idfile;
+    if (req.files['idfile']) {
+      const image = await cloudinary.uploader.upload(req.files['idfile'][0].path, {
+        width: 512,
+        height: 512,
+        crop: 'fill',
+      });
+      idfile = image.secure_url;
+    }
+
+
+
     const { firstname, bio } = req.body;
 
     let username;
@@ -82,6 +122,11 @@ handler.patch(
       ...(firstname && { firstname }),
       ...(typeof bio === 'string' && { bio }),
       ...(profilePicture && { profilePicture }),
+      ...(indigenefile && { indigenefile }),
+      ...(certificatefile && { certificatefile }),
+      ...(idfile && { idfile }),
+
+
     });
 
     res.json({ user });
