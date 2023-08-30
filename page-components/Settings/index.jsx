@@ -9,6 +9,8 @@ import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import styles from './Settings.module.css';
+import { FileAvatar } from '@/components/File';
+
 
 const EmailVerify = ({ user }) => {
   const [status, setStatus] = useState();
@@ -128,7 +130,7 @@ const AboutYou = ({ user, mutate }) => {
   const [certHref, setCertHref] = useState(user.certificatefile);
   const [avatarHref, setAvatarHref] = useState(user.profilePicture)
 
-  
+
   const onAvatarChange = useCallback((e) => {
     const file = e.currentTarget.files?.[0];
     if (!file) return;
@@ -228,7 +230,7 @@ const AboutYou = ({ user, mutate }) => {
     setIndigeneHref(user.indigenefile);
     setCertHref(user.certificatefile);
     setIdHref(user.idfile);
-  
+
   }, [user]);
 
   return (
@@ -253,35 +255,55 @@ const AboutYou = ({ user, mutate }) => {
             onChange={onAvatarChange}
           />
         </div>
-        <Spacer size={0.5} axis="vertical" />
+        <Spacer size={1.5} axis="vertical" />
 
-        <div className={styles.avatar}>
-          <Avatar size={96} username={user.username} url={indigeneHref} />
-          <input
-            aria-label="Your Indigene"
-            type="file"
-            accept="image/*"
-            ref={indigenefileRef}
-            onChange={onIndigeneChange}
-          />
+        <div>
+          {/* <span className={styles.label}>Your Indigene Letter</span> */}
 
-          
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload Letter of indigene  </label>
+          <input ref={indigenefileRef} class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer  focus:outline-none px-4 py-2" aria-describedby="file_input_help" id="file_input" type="file" />
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF, DOCX, (MAX FILE SIZE. 1 MB).</p>
+
+          <Spacer size={1.5} axis="vertical" />
         </div>
-        <Spacer size={0.5} axis="vertical" />
+        <div>
+          {/* <span className={styles.label}>Your Indigene Letter</span> */}
 
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload BSC / NCE Certificate</label>
+          <input ref={certificatefileRef} class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer  focus:outline-none px-4 py-2" aria-describedby="file_input_help" id="file_input" type="file" />
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF, DOCX, (MAX FILE SIZE. 1 MB).</p>
+
+          <Spacer size={1.5} axis="vertical" />
+        </div>
+        {/* 
+        <span className={styles.label}>Your Certificate</span>
         <div className={styles.avatar}>
-          <Avatar size={96} username={user.username} url={certHref} />
+          {/* <FileAvatar size={96} username={user.username} url={certHref} /> *
           <input
             aria-label="Your Certificate"
+            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer  focus:outline-none px-4 py-2"
             type="file"
             accept="image/*"
             ref={certificatefileRef}
             onChange={onCertChange}
           />
+          
+        </div> */}
+
+        <div>
+          {/* <span className={styles.label}>Your Indigene Letter</span> */}
+
+          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload National ID / Drivers Liscence </label>
+          <input ref={idfileRef} class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer  focus:outline-none px-4 py-2" aria-describedby="file_input_help" id="file_input" type="file" />
+          <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF, DOCX, (MAX FILE SIZE. 1 MB).</p>
+
+          <Spacer size={0.5} axis="vertical" />
         </div>
         <Spacer size={0.5} axis="vertical" />
 
-        <div className={styles.avatar}>
+
+
+        {/* <div className={styles.avatar}>
           <Avatar size={96} username={user.username} url={idHref} />
           <input
             aria-label="Your Identiifcation"
@@ -291,9 +313,9 @@ const AboutYou = ({ user, mutate }) => {
             onChange={onIdChange}
           />
         </div>
-        <Spacer size={0.5} axis="vertical" />
+        <Spacer size={0.5} axis="vertical" /> */}
 
-        
+
         <Button
           htmlType="submit"
           className={styles.submit}

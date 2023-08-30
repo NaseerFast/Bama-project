@@ -5,7 +5,6 @@ import { getMongoDb } from '@/api-lib/mongodb';
 import { ncOpts } from '@/api-lib/nc';
 import nc from 'next-connect';
 
-
 handler.get(async (req, res) => {
   const db = await getMongoDb();
 

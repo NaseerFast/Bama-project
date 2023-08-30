@@ -13,10 +13,13 @@ cloudinary.config({
 const upload = multer({ dest: 'uploads/' });
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://jaafarnasir71:jaafarnasir71@cluster0.45febgu.mongodb.net/?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  'mongodb+srv://jaafarnasir71:jaafarnasir71@cluster0.45febgu.mongodb.net/?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 // Define a schema and model for your data
 const fileSchema = new mongoose.Schema({

@@ -38,8 +38,24 @@ handler.post(
   async (req, res) => {
     const db = await getMongoDb();
 
-    let { username, email, password, firstname, lastname, gender, dateofbirth, phone, residentialaddress, district, qualification, instituition, yearofgraduation, course, idtype, idnumber } = req.body;
-
+    let {
+      username,
+      email,
+      password,
+      firstname,
+      lastname,
+      gender,
+      dateofbirth,
+      phone,
+      residentialaddress,
+      district,
+      qualification,
+      instituition,
+      yearofgraduation,
+      course,
+      idtype,
+      idnumber,
+    } = req.body;
 
     username = slugUsername(req.body.username);
     email = normalizeEmail(req.body.email);
@@ -68,7 +84,7 @@ handler.post(
       username,
       firstname,
       lastname,
-      gender, 
+      gender,
       dateofbirth,
       phone,
       residentialaddress,
@@ -79,7 +95,6 @@ handler.post(
       course,
       idtype,
       idnumber,
-      
     });
     req.logIn(user, (err) => {
       if (err) throw err;
