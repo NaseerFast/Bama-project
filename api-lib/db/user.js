@@ -53,7 +53,7 @@ export async function updateUserById(db, id, data) {
 
 export async function insertUser(
   db,
-  { email, originalPassword, bio = '', profilePicture, username, firstname, lastname, gender, dateofbirth, phone, indigenefile,residentialaddress, district, qualification, instituition, yearofgraduation, course, certificatefile,  idtype, idnumber, idfile }
+  { email, originalPassword, bio = '', profilePicture, username, firstname, lastname, gender, dateofbirth, phone, indigenefile,residentialaddress, qualification, instituition, yearofgraduation, course, certificatefile,  idtype, idnumber, idfile }
 ) {
   const user = {
     emailVerified: false,
@@ -68,7 +68,6 @@ export async function insertUser(
     phone,
     indigenefile, 
     residentialaddress,
-    district,
     qualification,
     instituition,
     yearofgraduation,

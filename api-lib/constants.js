@@ -12,7 +12,6 @@ export const ValidateProps = {
     dateofbirth: { type: 'string', minLength: 1, maxLength: 50,  },
     phone: { type: 'string', minLength: 11, maxLength:11,   },
     residentialaddress: { type: 'string', minLength: 4, maxLength: 160,  },
-    district: { type: 'string', },
     instituition: { type: 'string', minLength: 1,  },
     yearofgraduation: { type: 'string',  },
     qualification: { type: 'string', },

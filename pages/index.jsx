@@ -40,7 +40,7 @@ const IndexPage = () => {
         <title>BAM-POWER - Job Creation & Skill empowerment Program</title>
         <meta
           name="description"
-          content="Nextly is a free landing page template built with next.js & Tailwind CSS"
+          content="Welcome to the Bama Education Empowerment Programme (BAM-POWER) Portal"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

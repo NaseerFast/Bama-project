@@ -22,7 +22,6 @@ const SignUp = () => {
   const dateofbirthRef = useRef();
   const phoneRef = useRef();
   const residentialaddressRef = useRef();
-  const districtRef = useRef();
   const qualificationtypeRef = useRef();
   const instituitionRef = useRef();
   const yearofgraduationRef = useRef();
@@ -54,7 +53,6 @@ const SignUp = () => {
             dateofbirth: dateofbirthRef.current.value,
             phone: phoneRef.current.value,
             residentialaddress: residentialaddressRef.current.value,
-            district: districtRef.current.value,
             qualification: qualificationtypeRef.current.value,
             instituition: instituitionRef.current.value,
             yearofgraduation:yearofgraduationRef.current.value,
@@ -95,17 +93,17 @@ const SignUp = () => {
     { label: 'OTHER', value: 'OTHER' },
   ];
 
-  const district = [
-    { label: 'District', value: '' },
-    { label: 'Bama(Rural) District', value: 'BAMA-RURAL' },
-    { label: 'Bama Town', value: 'BAMA-TOWN' },
-    {label:  'Amchaka District', value: 'AMCHAKA'},
-    { label: 'Dar-eljamal District', value: 'DAR-ELJAMAL' },
-    { label: 'Gulumba District', value: 'GULUMBA' },
-    { label: 'Soye District', value: 'SOYE' },
-    {label:  'Woloji District', value: 'WOLOJI'},
+  // const district = [
+  //   { label: 'District', value: '' },
+  //   { label: 'Bama(Rural) District', value: 'BAMA-RURAL' },
+  //   { label: 'Bama Town', value: 'BAMA-TOWN' },
+  //   {label:  'Amchaka District', value: 'AMCHAKA'},
+  //   { label: 'Dar-eljamal District', value: 'DAR-ELJAMAL' },
+  //   { label: 'Gulumba District', value: 'GULUMBA' },
+  //   { label: 'Soye District', value: 'SOYE' },
+  //   {label:  'Woloji District', value: 'WOLOJI'},
 
-  ];
+  // ];
   return (
     <Wrapper className={styles.root}>
       <div className={styles.main}>
@@ -206,7 +204,7 @@ const SignUp = () => {
             size="large"
             required
           />
-          
+{/*           
            <Spacer size={1} axis="vertical" />
            <Select
             ref={districtRef}
@@ -216,7 +214,7 @@ const SignUp = () => {
             ariaLabel="Select "
             size="large"
             required
-          />
+          /> */}
           <Spacer size={1} axis="vertical" />
 
           <Select
