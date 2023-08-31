@@ -107,10 +107,10 @@ const SignUp = () => {
   return (
     <Wrapper className={styles.root}>
       <div className={styles.main}>
-        <h1 className={styles.title}>Join Now</h1>
+        <h3 className={styles.title}>Application Form</h3>
         <form onSubmit={onSubmit}>
           <Container alignItems="center">
-            <p className={styles.subtitle}>Your login</p>
+            <p className={styles.subtitle}> login details</p>
             <div className={styles.seperator} />
           </Container>
           <Input
@@ -134,7 +134,7 @@ const SignUp = () => {
           />
           <Spacer size={0.75} axis="vertical" />
           <Container alignItems="center">
-            <p className={styles.subtitle}>About you</p>
+            <p className={styles.subtitle}>Personal Information</p>
             <div className={styles.seperator} />
           </Container>
           <Input
@@ -149,8 +149,8 @@ const SignUp = () => {
           <Input
             ref={firstnameRef}
             autoComplete="name"
-            placeholder="Your Fname"
-            ariaLabel="Your Fname"
+            placeholder="Your First name"
+            ariaLabel="Your First name"
             size="large"
             required
           />
@@ -159,7 +159,7 @@ const SignUp = () => {
           <Input
             ref={lastnameRef}
             autoComplete="name"
-            placeholder="Your Lname"
+            placeholder="Your Last Name"
             ariaLabel="Your Lname"
             size="large"
             required
@@ -189,8 +189,8 @@ const SignUp = () => {
           <Input
             ref={phoneRef}
             autoComplete="phone"
-            placeholder="Your Phone"
-            ariaLabel="Your Phone"
+            placeholder="Your Phone Number"
+            ariaLabel="Your Phone Number"
             size="large"
             required
           />
@@ -199,7 +199,7 @@ const SignUp = () => {
            <Input
             ref={residentialaddressRef}
             autoComplete="address"
-            placeholder="Your address"
+            placeholder="Your residential address"
             ariaLabel="Your address"
             size="large"
             required
@@ -217,6 +217,10 @@ const SignUp = () => {
           /> */}
           <Spacer size={1} axis="vertical" />
 
+          <Container alignItems="center">
+            <p className={styles.subtitle}> Educational details</p>
+            <div className={styles.seperator} />
+          </Container>
           <Select
             ref={qualificationtypeRef}
             options={qualification}
@@ -258,6 +262,10 @@ const SignUp = () => {
           />
            <Spacer size={1} axis="vertical" />
 
+           <Container alignItems="center">
+            <p className={styles.subtitle}> ID details</p>
+            <div className={styles.seperator} />
+          </Container>
            <Select
             ref={idtypeRef}
             options={idtype}
