@@ -7,46 +7,178 @@ import UserEducationDetails from './UserEducation';
 import FileSaver from 'file-saver';
 import { Button } from '@/components/Button';
 import { useState } from 'react';
+import { PDFDocument,  StandardFonts,  rgb,  } from 'pdf-lib';
 
 export const User = ({ user }) => {
-
+  
 
   const [isLoading, setIsLoading] = useState(false);
-  const handleDownload = () => {
-    const userDetails = JSON.stringify(user, null, 2);
-    const blob = new Blob([userDetails], { type: 'application/json' });
-    FileSaver.saveAs(blob, 'user_details.json');
+  const router = useRouter();
+
+  // Sample user application data
+  const userApplication = {
+    firstName: 'John',
+    lastName: 'Doe',
+    dateOfBirth: 'January 1, 1990',
+    idNumber: '1234567890',
+    address: '123 Main Street, City, Country',
+    education: [
+      {
+        degree: 'Bachelor of Science',
+        university: 'University Name',
+        year: '2020',
+      },
+      {
+        degree: 'Master of Arts',
+        university: 'Another University',
+        year: '2022',
+      },
+    ],
   };
-  
-  
+
+  const handleDownload = async () => {
+    // Create a new PDF document
+    const pdfDoc = await PDFDocument.create();
+    const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
+
+    // Create a new page with A4 dimensions (595 x 842 points)
+    const page = pdfDoc.addPage([595, 842]);
+
+    // Set the font and text color
+    page.setFont(helveticaFont);
+    page.setFontSize(12);
+    // page.setTextColor(rgb(0, 0, 0));
+
+    // Add a title
+    page.drawText('User Application Details', {
+      x: 50,
+      y: 800,
+      size: 18,
+    });
+
+    // Personal Information Section
+    page.drawText('Personal Information', {
+      x: 50,
+      y: 770,
+      size: 16,
+      color: rgb(0, 0, 1), // Blue color for section header
+    });
+
+    page.drawText('First Name:', {
+      x: 50,
+      y: 740,
+      size: 14,
+    });
+
+    page.drawText(userApplication.firstName, {
+      x: 200,
+      y: 740,
+      size: 14,
+    });
+
+    page.drawText('Last Name:', {
+      x: 50,
+      y: 720,
+      size: 14,
+    });
+
+    page.drawText(userApplication.lastName, {
+      x: 200,
+      y: 720,
+      size: 14,
+    });
+
+    page.drawText('Date of Birth:', {
+      x: 50,
+      y: 700,
+      size: 14,
+    });
+
+    page.drawText(userApplication.dateOfBirth, {
+      x: 200,
+      y: 700,
+      size: 14,
+    });
+
+    page.drawText('ID Number:', {
+      x: 50,
+      y: 680,
+      size: 14,
+    });
+
+    page.drawText(userApplication.idNumber, {
+      x: 200,
+      y: 680,
+      size: 14,
+    });
+
+    // Address Section
+    page.drawText('Address', {
+      x: 50,
+      y: 640,
+      size: 16,
+      color: rgb(0, 0, 1), // Blue color for section header
+    });
+
+    page.drawText('Address:', {
+      x: 50,
+      y: 610,
+      size: 14,
+    });
+
+    page.drawText(userApplication.address, {
+      x: 200,
+      y: 610,
+      size: 14,
+      maxWidth: 350, // Limit the width for address text
+    });
+
+    // Education Section
+    page.drawText('Education', {
+      x: 50,
+      y: 580,
+      size: 16,
+      color: rgb(0, 0, 1), // Blue color for section header
+    });
+
+    let yPos = 550;
+    userApplication.education.forEach((edu) => {
+      page.drawText(`Degree: ${edu.degree}`, {
+        x: 50,
+        y: yPos,
+        size: 14,
+      });
+
+      page.drawText(`University: ${edu.university}`, {
+        x: 200,
+        y: yPos,
+        size: 14,
+      });
+
+      page.drawText(`Year: ${edu.year}`, {
+        x: 450,
+        y: yPos,
+        size: 14,
+      });
+
+      yPos -= 30; // Adjust vertical position for the next education entry
+    });
+
+    // Serialize the PDF to bytes
+    const pdfBytes = await pdfDoc.save();
+
+    // Create a Blob from the PDF bytes
+    const pdfBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+
+    // Save the PDF Blob as a file using FileSaver
+    FileSaver.saveAs(pdfBlob, 'user_application.pdf');
+
+    // Navigate back to the user application page
+    router.push('/user-application');
+  };
+
   return (
-  //   <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-  //   <div className="w-full max-w-4xl p-6">
-  //     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 ">
-  //       {/* Personal Information */}
-  //       <div className="bg-white rounded-lg shadow-md p-6 col-span-2">
-  //         <h2 className="text-xl font-semibold mb-4">Personal Information</h2>
-  //         {/* <UserPersonalInfo user={user} /> */} 
-  //         <UserHeader user={user} />
-          
-  //       </div>
 
-  //       {/* ID Details */}
-  //       <div className="bg-white rounded-lg shadow-md p-6 col-span-2">
-  //         <h2 className="text-xl font-semibold mb-4">ID Details</h2>
-  //         {/* ID details content */}
-  //         <UserIdDetails user={user} />
-  //       </div>
-
-  //       {/* Education and Credentials */}
-  //       <div className="bg-white rounded-lg shadow-md p-6 col-span-4">
-  //         <h2 className="text-xl font-semibold mb-4">Education and Credentials</h2>
-  //         {/* Education and credentials content */}
-  //         <UserEducationDetails />
-  //       </div>
-  //     </div>
-  //   </div>
-  // </div>
 <div class="mx-auto grid max-w-4xl grid-cols-12 gap-4 bg-zinc-50 p-1">
   <div class="header col-span-12 rounded-lg py-8">
     {/* <!-- Header content --> */}
@@ -196,7 +328,7 @@ export const User = ({ user }) => {
  
   <div class="footer col-span-12 rounded-lg p-6 text-center">
     {/* <!-- Footer content --> */}
-    <button className="disabled bg-green-600 px-2 py-2 rounded-md text-white" onClick={handleDownload}>Download Details</button>
+    <button className="disabled bg-green-600 px-2 py-2 rounded-md text-white"onClick={handleDownload} >Download Details</button>
  
   </div>
 </div>
