@@ -8,7 +8,7 @@ import {
   HeartIcon,
 } from "@heroicons/react/24/solid";
 
-import benefitOneImg from "../../public/img/children2.jpeg";
+import benefitOneImg from "../../public/img/GT2.jpg";
 import benefitTwoImg from "../../public/img/older-woman.jpg";
 
 const benefitOne = {

@@ -62,8 +62,10 @@ const SignUp = () => {
           }),
         });
         mutate({ user: response.user }, false);
-        toast.success('Your account has been created');
-        router.replace('/feed');
+        toast.success('Your account has been created, please verify your account in settings!', {
+          duration: 6000,
+        });
+        router.replace(`/user/${usernameRef.current.value}`);
       } catch (e) {
         toast.error(e.message);
       } finally {
@@ -82,6 +84,7 @@ const SignUp = () => {
 
   const qualification = [
     { label: 'Qualification Type', value: '' },
+    { label: 'MSC', value: 'MSC' },
     { label: 'BSC', value: 'BSC' },
     { label: 'NCE', value: 'NCE' },
   ];
@@ -293,7 +296,7 @@ const SignUp = () => {
             size="large"
             loading={isLoading}
           >
-            Sign up
+            Submit
           </Button>
         </form>
       </div>
