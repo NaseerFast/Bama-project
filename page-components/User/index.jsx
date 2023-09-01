@@ -4,11 +4,19 @@ import UserPosts from './UserPosts';
 import UserPersonalInfo from './UserPersonalInfo';
 import UserIdDetails from './UserIdDetail';
 import UserEducationDetails from './UserEducation';
-
+import FileSaver from 'file-saver';
+import { Button } from '@/components/Button';
+import { useState } from 'react';
 
 export const User = ({ user }) => {
 
-  
+
+  const [isLoading, setIsLoading] = useState(false);
+  const handleDownload = () => {
+    const userDetails = JSON.stringify(user, null, 2);
+    const blob = new Blob([userDetails], { type: 'application/json' });
+    FileSaver.saveAs(blob, 'user_details.json');
+  };
   
   
   return (
@@ -177,14 +185,19 @@ export const User = ({ user }) => {
                         20 July 1986
                     </p>
                     </div> */}
+                    
                 </div>
+                
             </div>  
+            
   </div>
 
 
-
-  <div class="footer col-span-12 rounded-lg p-6">
+ 
+  <div class="footer col-span-12 rounded-lg p-6 text-center">
     {/* <!-- Footer content --> */}
+    <button className="disabled bg-green-600 px-2 py-2 rounded-md text-white" onClick={handleDownload}>Download Details</button>
+ 
   </div>
 </div>
   );

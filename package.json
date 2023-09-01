@@ -29,6 +29,7 @@
     "clsx": "^1.1.1",
     "connect-mongo": "^4.6.0",
     "express-session": "^1.17.3",
+    "file-saver": "^2.0.5",
     "heroicons": "^2.0.18",
     "modern-normalize": "^1.1.0",
     "mongodb": "^4.7.0",
