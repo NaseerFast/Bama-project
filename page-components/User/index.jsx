@@ -40,7 +40,7 @@ export const User = ({ user }) => {
   //   </div>
   // </div>
 <div class="mx-auto grid max-w-4xl grid-cols-12 gap-4 bg-zinc-50 p-1">
-  <div class="header col-span-12 rounded-lg border border-gray-300 py-8">
+  <div class="header col-span-12 rounded-lg py-8">
     {/* <!-- Header content --> */}
   </div>
   
@@ -183,7 +183,7 @@ export const User = ({ user }) => {
 
 
 
-  <div class="footer col-span-12 rounded-lg border border-gray-800 bg-gray-700 p-6">
+  <div class="footer col-span-12 rounded-lg p-6">
     {/* <!-- Footer content --> */}
   </div>
 </div>
