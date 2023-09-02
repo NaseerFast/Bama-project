@@ -12,7 +12,7 @@ const UserHeader = ({ user }) => {
       {/* <p><strong>Name:</strong> John Doe</p>
             <p><strong>Email:</strong> johndoe@example.com</p>
             <p><strong>Location:</strong> New York, USA</p> */}
-            <div class="bg-white py-3 border-t-4 border-green-400">
+            <div class="bg-white py-3 border-t-4 border-green-400 px-4">
                     <div class="image overflow-hidden">
                         <img class="h-auto w-full mx-auto"
                             src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"

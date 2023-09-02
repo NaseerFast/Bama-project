@@ -27,7 +27,7 @@ async function generateApplicationId(db) {
   }
 
   const nextNumber = (lastNumber + 1).toString().padStart(3, '0');
-  return `NPWR/${currentYear}/${nextNumber}`;
+  return `BMPR/${currentYear}/${nextNumber}`;
 }
 
 export async function findUserForAuth(db, userId) {

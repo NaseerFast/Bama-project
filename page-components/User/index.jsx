@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import { useCurrentUser } from '@/lib/user';
 import { Wrapper } from '@/components/Layout';
 import { Container, Spacer } from '@/components/Layout';
+import { CheckIcon, XMarkIcon } from '@heroicons/react/24/solid';
 
  const UserDetail = ({ user }) => {
   
@@ -241,7 +242,24 @@ import { Container, Spacer } from '@/components/Layout';
                         {user.yearofgraduation}
                     </p>
                     </div>
+                    {user.certificatefile ? (
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">Certificate</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white">
+        Uploaded <CheckCircleIcon class="h-6 w-6 text-green-500" />
+      </p>
+      </div>
+    ) : (
+      
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">Certificate</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white">
+      <span></span> <XMarkIcon class="h-6 w-6 text-red-500" />
+      </p>
+      </div>
+    )}
 {/* 
+
                     <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
                     <p class="text-sm text-gray-600">Date of Birth</p>
                     <p class="text-base font-medium text-navy-700 dark:text-white">
@@ -266,7 +284,7 @@ import { Container, Spacer } from '@/components/Layout';
  
   <div class="footer col-span-12 rounded-lg p-6 text-center">
     {/* <!-- Footer content --> */}
-    <button className="disabled bg-green-600 px-2 py-2 rounded-md text-white"onClick={generateAcknowledgeCard} >Download Details</button>
+    <button className=" bg-green-600 px-2 py-2 rounded-md text-white"onClick={generateAcknowledgeCard} >Download Details</button>
  
   </div>
 </div>
