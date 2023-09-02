@@ -4,6 +4,8 @@ import { User } from '@/page-components/User';
 import Head from 'next/head';
 
 export default function UserPage({ user }) {
+
+  console.log("coming from USER", user);
   return (
     <>
       <Head>

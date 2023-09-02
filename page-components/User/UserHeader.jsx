@@ -23,7 +23,7 @@ const UserHeader = ({ user }) => {
                     {/* <h3 class="text-gray-600 font-lg text-semibold leading-6 mb-2">Owner at Her Company Inc.</h3> */}
                     <p className="mb-2"><strong>Mobile:</strong> {user.phone}</p>
                     <p className="mb-2"><strong>Email:</strong> {user.email}</p>
-            <p className='mb-2'><strong>Application ID:</strong> BPR/2023/00{user.firstname.length}</p>
+            <p className='mb-2'><strong>Applicant ID:</strong> {user.applicationId}</p>
                     <ul
                         class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
                         <li class="flex items-center py-3">
@@ -32,8 +32,8 @@ const UserHeader = ({ user }) => {
                                     class="bg-red-500 py-1 px-2 rounded text-white text-sm">Pending</span></span>
                         </li>
                         <li class="flex items-center py-3">
-                            <span>Batch 1</span>
-                            <span class="ml-auto">September 2023</span>
+                            <span>Bam-Power: Batch A</span>
+                            {/* <span class="ml-auto">Batch A </span> */}
                         </li>
                     </ul>
                 </div>

@@ -29,6 +29,7 @@ const EmailVerify = ({ user }) => {
   }, []);
   if (user.emailVerified) return null;
   
+  console.log("from setting", user);
   return (
     <Container className={styles.note}>
       <Container flex={1}>

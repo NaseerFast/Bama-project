@@ -18,6 +18,8 @@ export const ValidateProps = {
     course: { type: 'string', minLength: 1, maxLength: 50 },
     idtype: { type: 'string', minLength: 1,  },
     idnumber: { type: 'string', minLength: 11, maxLength: 20,  },
+    applicationId: { type: 'string' },
+
   },
   post: {
     content: { type: 'string', minLength: 1, maxLength: 280 },

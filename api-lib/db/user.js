@@ -11,6 +11,25 @@ export async function findUserWithEmailAndPassword(db, email, password) {
   return null;
 }
 
+async function generateApplicationId(db) {
+  const currentYear = new Date().getFullYear();
+  const lastUser = await db
+    .collection('users')
+    .find({ applicationId: new RegExp(`^BMPR/${currentYear}/[0-9]{3}$`) })
+    .sort({ applicationId: -1 })
+    .limit(1)
+    .toArray();
+
+  let lastNumber = 0;
+  if (lastUser.length > 0) {
+    const parts = lastUser[0].applicationId.split('/');
+    lastNumber = parseInt(parts[2], 10);
+  }
+
+  const nextNumber = (lastNumber + 1).toString().padStart(3, '0');
+  return `NPWR/${currentYear}/${nextNumber}`;
+}
+
 export async function findUserForAuth(db, userId) {
   return db
     .collection('users')
@@ -55,6 +74,7 @@ export async function insertUser(
   db,
   { email, originalPassword, bio = '', profilePicture, username, firstname, lastname, gender, dateofbirth, phone, indigenefile,residentialaddress, qualification, instituition, yearofgraduation, course, certificatefile,  idtype, idnumber, idfile }
 ) {
+  const applicationId = await generateApplicationId(db); // Generate applicationId
   const user = {
     emailVerified: false,
     profilePicture,
@@ -76,6 +96,7 @@ export async function insertUser(
     idtype,
     idnumber,
     idfile,
+    applicationId
     
   };
   const password = await bcrypt.hash(originalPassword, 10);

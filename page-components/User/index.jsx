@@ -1,18 +1,20 @@
 import styles from './User.module.css';
 import UserHeader from './UserHeader';
-import UserPosts from './UserPosts';
 import UserPersonalInfo from './UserPersonalInfo';
 import UserIdDetails from './UserIdDetail';
 import UserEducationDetails from './UserEducation';
 import FileSaver from 'file-saver';
 import { Button } from '@/components/Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PDFDocument,  StandardFonts,  rgb,  } from 'pdf-lib';
 import { useRouter } from 'next/router';
+import { useCurrentUser } from '@/lib/user';
+import { Wrapper } from '@/components/Layout';
+import { Container, Spacer } from '@/components/Layout';
 
-export const User = ({ user }) => {
+ const UserDetail = ({ user }) => {
   
-
+  // const { data, error, mutate } = useCurrentUser();
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const generateAcknowledgeCard = async () => {
@@ -49,7 +51,7 @@ export const User = ({ user }) => {
     });
   
 
-    page.drawText('APPLICANT ID: 12345677', {
+    page.drawText(`APPLICANT ID: ${user.applicationId}`, {
       x: 100,
       y: 540,
       size: 12,
@@ -112,7 +114,7 @@ export const User = ({ user }) => {
   };
   
 
-console.log('from user',  user);
+// console.log('from data',  data);
   return (
 
 <div class="mx-auto grid max-w-4xl grid-cols-12 gap-4 bg-zinc-50 p-1">
@@ -272,3 +274,24 @@ console.log('from user',  user);
 };
     {/* <UserHeader user={user} />
       <UserPosts user={user} /> */}
+      export const User = () => {
+  const { data, error, mutate } = useCurrentUser();
+  const router = useRouter();
+  useEffect(() => {
+    if (!data && !error) return;
+    if (!data.user) {
+      router.replace('/login');
+    }
+  }, [router, data, error]);
+  return (
+    <Wrapper className={styles.wrapper}>
+      <Spacer size={2} axis="vertical" />
+      {data?.user ? (
+        <>
+          <UserDetail user={data.user} />
+        
+        </>
+      ) : null}
+    </Wrapper>
+  );
+};
