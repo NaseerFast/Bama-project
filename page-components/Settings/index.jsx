@@ -28,6 +28,7 @@ const EmailVerify = ({ user }) => {
     }
   }, []);
   if (user.emailVerified) return null;
+  
   return (
     <Container className={styles.note}>
       <Container flex={1}>

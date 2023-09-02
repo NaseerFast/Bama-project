@@ -15,169 +15,104 @@ export const User = ({ user }) => {
 
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-
-  // Sample user application data
-  const userApplication = {
-    firstName: 'John',
-    lastName: 'Doe',
-    dateOfBirth: 'January 1, 1990',
-    idNumber: '1234567890',
-    address: '123 Main Street, City, Country',
-    education: [
-      {
-        degree: 'Bachelor of Science',
-        university: 'University Name',
-        year: '2020',
-      },
-      {
-        degree: 'Master of Arts',
-        university: 'Another University',
-        year: '2022',
-      },
-    ],
-  };
-
-  const handleDownload = async () => {
+  const generateAcknowledgeCard = async () => {
     // Create a new PDF document
     const pdfDoc = await PDFDocument.create();
-    const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  
+    // Add a new page to the document
+    const page = pdfDoc.addPage([400, 600]);
+  
+    // Set the background color of the page
+    page.drawRectangle({
+      x: 0,
+      y: 0,
+      width: 400,
+      height: 600,
+      color: rgb(1, 1, 1), // White background
+    });
+  
+    // Add styling
+    page.drawRectangle({
+      x: 20,
+      y: 20,
+      width: 360,
+      height: 560,
+      color: rgb(1, 1, 1),
+    });
+  
+    // Add sample data
+    page.drawText('BAMPOWER APPLICANT ACKNOWLEDGEMENT CARD', {
+      x: 40,
+      y: 560,
+      size: 12,
+      color: rgb(0.95, 0.1, 0.1),
+    });
+  
 
-    // Create a new page with A4 dimensions (595 x 842 points)
-    const page = pdfDoc.addPage([595, 842]);
-
-    // Set the font and text color
-    page.setFont(helveticaFont);
-    page.setFontSize(12);
-    // page.setTextColor(rgb(0, 0, 0));
-
-    // Add a title
-    page.drawText('User Application Details', {
-      x: 50,
-      y: 800,
-      size: 18,
+    page.drawText('APPLICANT ID: 12345677', {
+      x: 100,
+      y: 540,
+      size: 12,
+      color: rgb(0, 0.9, 0.4),
     });
 
-    // Personal Information Section
-    page.drawText('Personal Information', {
-      x: 50,
-      y: 770,
-      size: 16,
-      color: rgb(0, 0, 1), // Blue color for section header
-    });
+    
+    // page.drawText('12345677', {
+    //   x: 40,
+    //   y: 520,
+    //   size: 16,
+    //   color: rgb(0.95, 0.1, 0.1),
+    // });
 
-    page.drawText('First Name:', {
-      x: 50,
-      y: 740,
-      size: 14,
-    });
-
-    page.drawText(userApplication.firstName, {
-      x: 200,
-      y: 740,
-      size: 14,
-    });
-
-    page.drawText('Last Name:', {
-      x: 50,
-      y: 720,
-      size: 14,
-    });
-
-    page.drawText(userApplication.lastName, {
-      x: 200,
-      y: 720,
-      size: 14,
-    });
-
-    page.drawText('Date of Birth:', {
-      x: 50,
-      y: 700,
-      size: 14,
-    });
-
-    page.drawText(userApplication.dateOfBirth, {
-      x: 200,
-      y: 700,
-      size: 14,
-    });
-
-    page.drawText('ID Number:', {
-      x: 50,
-      y: 680,
-      size: 14,
-    });
-
-    page.drawText(userApplication.idNumber, {
-      x: 200,
-      y: 680,
-      size: 14,
-    });
-
-    // Address Section
-    page.drawText('Address', {
-      x: 50,
-      y: 640,
-      size: 16,
-      color: rgb(0, 0, 1), // Blue color for section header
-    });
-
-    page.drawText('Address:', {
-      x: 50,
-      y: 610,
-      size: 14,
-    });
-
-    page.drawText(userApplication.address, {
-      x: 200,
-      y: 610,
-      size: 14,
-      maxWidth: 350, // Limit the width for address text
-    });
-
-    // Education Section
-    page.drawText('Education', {
-      x: 50,
-      y: 580,
-      size: 16,
-      color: rgb(0, 0, 1), // Blue color for section header
-    });
-
-    let yPos = 550;
-    userApplication.education.forEach((edu) => {
-      page.drawText(`Degree: ${edu.degree}`, {
-        x: 50,
-        y: yPos,
-        size: 14,
+    const sampleData = {
+     
+      Name: user.firstname + " " + user.lastname,
+      Dob: user.dateofbirth,
+      Sex: user.gender,
+      Address: user.residentialaddress,
+      State: 'borno',
+      Education: user.qualification,
+      Instituition: user.instituition,
+      Course: user.course,
+      Graduation: user.yearofgraduation,
+      MobileNo: user.phone,
+      Email: user.email,
+      Status: 'pending',
+      // subjects: [
+      //   { srNo: '1', subject: 'English', examDate: '5 July 2019' },
+      //   { srNo: '2', subject: 'English', examDate: '5 July 2019' },
+      //   { srNo: '3', subject: 'English', examDate: '5 July 2019' },
+      // ],
+    };
+  
+    // // Add sample data to the PDF
+    
+    const dataStartY = 500;
+    const lineHeight = 20;
+    let dataY = dataStartY;
+  
+    for (const field in sampleData) {
+      page.drawText(`${field}: ${sampleData[field]}`, {
+        x: 40,
+        y: dataY,
+        size: 12,
+        color: rgb(0, 0, 0),
       });
-
-      page.drawText(`University: ${edu.university}`, {
-        x: 200,
-        y: yPos,
-        size: 14,
-      });
-
-      page.drawText(`Year: ${edu.year}`, {
-        x: 450,
-        y: yPos,
-        size: 14,
-      });
-
-      yPos -= 30; // Adjust vertical position for the next education entry
-    });
-
+      dataY -= lineHeight;
+    }
+  
     // Serialize the PDF to bytes
     const pdfBytes = await pdfDoc.save();
-
+  
     // Create a Blob from the PDF bytes
     const pdfBlob = new Blob([pdfBytes], { type: 'application/pdf' });
-
-    // Save the PDF Blob as a file using FileSaver
-    FileSaver.saveAs(pdfBlob, 'user_application.pdf');
-
-    // Navigate back to the user application page
-    router.push('/user-application');
+  
+    // Save the Blob using file-saver
+    saveAs(pdfBlob, 'acknowledgment_card.pdf');
   };
+  
 
+console.log('from user',  user);
   return (
 
 <div class="mx-auto grid max-w-4xl grid-cols-12 gap-4 bg-zinc-50 p-1">
@@ -329,7 +264,7 @@ export const User = ({ user }) => {
  
   <div class="footer col-span-12 rounded-lg p-6 text-center">
     {/* <!-- Footer content --> */}
-    <button className="disabled bg-green-600 px-2 py-2 rounded-md text-white"onClick={handleDownload} >Download Details</button>
+    <button className="disabled bg-green-600 px-2 py-2 rounded-md text-white"onClick={generateAcknowledgeCard} >Download Details</button>
  
   </div>
 </div>

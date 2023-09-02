@@ -6,7 +6,7 @@ import { fetcher } from '@/lib/fetch';
 import { useCurrentUser } from '@/lib/user';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import styles from './Auth.module.css';
 import Select from '@/components/Input/Select';
@@ -29,12 +29,19 @@ const SignUp = () => {
   const idtypeRef = useRef();
   const idnumberRef = useRef();
   
-  const { mutate } = useCurrentUser();
+  // const { mutate } = useCurrentUser();
 
   const [isLoading, setIsLoading] = useState(false);
+ 
+  const { data: { user } = {}, mutate, isValidating } = useCurrentUser();
 
   const router = useRouter();
+  useEffect(() => {
+    if (isValidating) return;
+    if (user) router.replace('/login');
+  }, [user, router, isValidating]);
 
+  
   const onSubmit = useCallback(
     async (e) => {
       e.preventDefault();
