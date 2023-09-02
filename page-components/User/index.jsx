@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 import { useCurrentUser } from '@/lib/user';
 import { Wrapper } from '@/components/Layout';
 import { Container, Spacer } from '@/components/Layout';
-import { CheckIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import { CheckCircleIcon , XCircleIcon  } from '@heroicons/react/24/solid';
 
  const UserDetail = ({ user }) => {
   
@@ -242,19 +242,52 @@ import { CheckIcon, XMarkIcon } from '@heroicons/react/24/solid';
                         {user.yearofgraduation}
                     </p>
                     </div>
+                    {user.indigenefile ? (
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">Letter of indigene</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+        <span>Uploaded</span> <CheckCircleIcon  class="h-6 w-6 text-green-500" />
+      </p>
+      </div>
+    ) : (
+      
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600"> Indigene Letter</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
+      </p>
+      </div>
+    )}
                     {user.certificatefile ? (
       <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
       <p class="text-sm text-gray-600">Certificate</p>
-      <p class="text-base font-medium text-navy-700 dark:text-white">
-        Uploaded <CheckCircleIcon class="h-6 w-6 text-green-500" />
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
       </p>
       </div>
     ) : (
       
       <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
       <p class="text-sm text-gray-600">Certificate</p>
-      <p class="text-base font-medium text-navy-700 dark:text-white">
-      <span></span> <XMarkIcon class="h-6 w-6 text-red-500" />
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
+      </p>
+      </div>
+    )}
+    
+    {user.idfile ? (
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">ID</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
+      </p>
+      </div>
+    ) : (
+      
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">ID</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
       </p>
       </div>
     )}
