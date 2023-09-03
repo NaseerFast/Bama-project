@@ -37,7 +37,7 @@ const IndexPage = () => {
   return (
     <>
       <Head>
-        <title>BAM-POWER - Job Creation & Skill empowerment Program</title>
+        <title>BAM-POWER - Job Creation & Skill Empowerment Program</title>
         <meta
           name="description"
           content="Welcome to the Bama Education Empowerment Programme (BAM-POWER) Portal"
