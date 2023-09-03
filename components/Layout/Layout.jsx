@@ -14,19 +14,11 @@ const Layout = ({ children }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta
-          name="description"
-          content="nextjs-mongodb-app is a continously developed app built with Next.JS and MongoDB. This project goes further and attempts to integrate top features as seen in real-life apps."
-        />
-        <meta property="og:title" content="Next.js + MongoDB App" />
-        <meta
-          property="og:description"
-          content="nextjs-mongodb-app is a continously developed app built with Next.JS and MongoDB. This project goes further and attempts to integrate top features as seen in real-life apps."
-        />
-        <meta
-          property="og:image"
-          content="https://repository-images.githubusercontent.com/201392697/5d392300-eef3-11e9-8e20-53310193fbfd"
-        />
+<meta property="og:title" content="BAM-Power: Empowering Youth in Bama, Borno State"/>
+<meta property="og:description" content="BAM-Power is a strategic initiative focused on educating and empowering young people and children across Bama Local Government Area in Borno State."/>
+<meta property="og:image" content="URL_to_your_image.jpg"/>
+<meta property="og:url" content="URL_to_your_webapp"/>
+        
       </Head>
       <Nav />
       <main className={styles.main}>{children}</main>
