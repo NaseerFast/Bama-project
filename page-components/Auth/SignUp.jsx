@@ -290,8 +290,8 @@ const SignUp = () => {
           <Input
             ref={idnumberRef}
             autoComplete="ID Number "
-            placeholder="Id number"
-            ariaLabel="ID number"
+            placeholder="Eg: NIN"
+            ariaLabel="Eg: NIN"
             size="large"
             required
           />
