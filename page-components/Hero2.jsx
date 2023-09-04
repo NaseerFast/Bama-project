@@ -52,7 +52,7 @@ const HeroTwo = () => {
            </p>
            
            <a
-                href="/application"
+                href="/sign-up"
                 
                 rel="noopener"
                 className=" mt-3 px-8 py-4 text-lg font-medium text-center text-white bg-green-600 rounded-md ">
