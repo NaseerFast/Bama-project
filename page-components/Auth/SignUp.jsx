@@ -36,10 +36,11 @@ const SignUp = () => {
   const { data: { user } = {}, mutate, isValidating } = useCurrentUser();
 
   const router = useRouter();
-  useEffect(() => {
-    if (isValidating) return;
-    if (user) router.replace('/login');
-  }, [user, router, isValidating]);
+  // useEffect(() => {
+  //   if (isValidating) return;
+  //   if (user) router.replace('/login');
+    
+  // }, [user, router, isValidating]);
 
   
   const onSubmit = useCallback(
@@ -103,17 +104,7 @@ const SignUp = () => {
     { label: 'OTHER', value: 'OTHER' },
   ];
 
-  // const district = [
-  //   { label: 'District', value: '' },
-  //   { label: 'Bama(Rural) District', value: 'BAMA-RURAL' },
-  //   { label: 'Bama Town', value: 'BAMA-TOWN' },
-  //   {label:  'Amchaka District', value: 'AMCHAKA'},
-  //   { label: 'Dar-eljamal District', value: 'DAR-ELJAMAL' },
-  //   { label: 'Gulumba District', value: 'GULUMBA' },
-  //   { label: 'Soye District', value: 'SOYE' },
-  //   {label:  'Woloji District', value: 'WOLOJI'},
 
-  // ];
   return (
     <Wrapper className={styles.root}>
       <div className={styles.main}>
@@ -214,17 +205,7 @@ const SignUp = () => {
             size="large"
             required
           />
-{/*           
-           <Spacer size={1} axis="vertical" />
-           <Select
-            ref={districtRef}
-            options={district}
-            autoComplete="district"
-            placeholder="Your District"
-            ariaLabel="Select "
-            size="large"
-            required
-          /> */}
+
           <Spacer size={1} axis="vertical" />
 
           <Container alignItems="center">
