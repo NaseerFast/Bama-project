@@ -112,7 +112,7 @@ const Hero = () => {
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
               <a
-                href="/application"
+                href="/sign-up"
                 
                 rel="noopener"
                 className="mt-3 px-8 py-4 text-lg font-medium text-center text-white bg-green-600 rounded-md ">

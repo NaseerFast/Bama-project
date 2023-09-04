@@ -80,7 +80,7 @@ const HeroTwo = () => {
            &#8220;BAM-Power is a strategic initiative focused on educating and empowering young people and children across Bama Local Government Area in Borno State. Aligned with Babagana Zulum's development plans, it aims to enhance lives positively. &#8221; -<span className="font-medium text-gray-700"> Honourable Grema Terab, Chairman Bama Local Government</span>
            </p>
            <a
-                href="/application"
+                href="/sign-up"
                 
                 rel="noopener"
                 className=" mt-3 px-8 py-4 text-lg font-medium text-center text-white bg-green-600 rounded-md ">

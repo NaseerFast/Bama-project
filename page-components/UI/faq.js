@@ -26,7 +26,7 @@ const Faq = () => {
                   <Disclosure.Panel className="px-4 pt-4 pb-2 text-gray-500 dark:text-gray-300">
                     <ul className="list-disc">
                     {item.points && item.points.map((i, index) => (
-                      <li className="list">{i.itemText}</li>
+                      <li className="list" key={index}>{i.itemText}</li>
                     ))}
                     </ul>
                   </Disclosure.Panel>
