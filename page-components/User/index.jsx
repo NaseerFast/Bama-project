@@ -12,8 +12,6 @@ import { useCurrentUser } from '@/lib/user';
 import { Wrapper } from '@/components/Layout';
 import { Container, Spacer } from '@/components/Layout';
 import { CheckCircleIcon , XCircleIcon  } from '@heroicons/react/24/solid';
-import { toast } from 'react-hot-toast';
-import Link from 'next/link';
 
  const UserDetail = ({ user }) => {
   
@@ -115,43 +113,30 @@ import Link from 'next/link';
     // Save the Blob using file-saver
     saveAs(pdfBlob, 'acknowledgment_card.pdf');
   };
-  const notifyToCompleteApplication = () => {
-    toast.success(
-      'Complete your application by uploading your files the settings page. Click here to go there.',
-      {
-        duration: 5000, // Adjust the duration as needed
-        position: "center",
-        onClick: () => {
-          // Redirect the user to the settings page
-          // Replace '/settings' with the actual path to your settings page
-          router.push('/settings'); // Use router.push to navigate in Next.js
-        },
-      }
-    );
-  };
+  
 
 // console.log('from data',  data);
   return (
 
-<div className="mx-auto grid max-w-4xl grid-cols-12 gap-4 bg-zinc-50 p-1">
-  <div className="header col-span-12 rounded-lg py-8">
+<div class="mx-auto grid max-w-4xl grid-cols-12 gap-4 bg-zinc-50 p-1">
+  <div class="header col-span-12 rounded-lg py-8">
     {/* <!-- Header content --> */}
   </div>
   
-  <div className="col-span-12 rounded-lg   sm:col-span-4">
+  <div class="col-span-12 rounded-lg   sm:col-span-4">
     {/* <!-- Sidebar --> */}
     <UserHeader user={user} />
   </div>
-  <div className="col-span-12 rounded-lg border   sm:col-span-8">
+  <div class="col-span-12 rounded-lg border   sm:col-span-8">
     {/* <!-- Main Content --> */}
     {/* <UserEducationDetails />
      */}
-      <div className="relative flex flex-col items-center rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white  shadow-3xl shadow-shadow-500 p-3">
-                <div className="mt-2 mb-8 w-full">
-                    <h4 className="px-2 text-xl font-bold text-navy-700 dark:text-white">
+      <div class="relative flex flex-col items-center rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white  shadow-3xl shadow-shadow-500 p-3">
+                <div class="mt-2 mb-8 w-full">
+                    <h4 class="px-2 text-xl font-bold text-navy-700 dark:text-white">
                     General Information
                     </h4>
-                    {/* <p className="mt-2 px-2 text-base text-gray-600">
+                    {/* <p class="mt-2 px-2 text-base text-gray-600">
                     As we live, our hearts turn colder. Cause pain is what we go through
                     as we become older. We get insulted by others, lose trust for those
                     others. We get back stabbed by friends. It becomes harder for us to
@@ -159,45 +144,45 @@ import Link from 'next/link';
                     that we give them all...
                     </p> */}
                 </div> 
-                <div className="grid grid-cols-2 gap-4 px-2 w-full">
+                <div class="grid grid-cols-2 gap-4 px-2 w-full">
                   
-                <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">First Name</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white capitalize">
+                <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">First Name</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
                         {user.firstname}
                     </p>
                     </div>
 
-                    <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Last Name</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white capitalize">
+                    <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Last Name</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white capitalize">
                         {user.lastname}
                     </p>
                     </div>
                    
-                    <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Date of Birth</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white">
+                    <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Date of Birth</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
                         {user.dateofbirth}
                     </p>
                     </div>
 
-                    <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Gender</p>
-                    <p className="text-base font-medium text-navy-700 capitalize">
+                    <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Gender</p>
+                    <p class="text-base font-medium text-navy-700 capitalize">
                      {user.gender}
                     </p>
                     </div>
-                    <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Residential Address</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white capitalize">
+                    <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Residential Address</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
                         {user.residentialaddress}
                     </p>
                     </div>
 
-                    <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">State</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white capitalize">
+                    <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">State</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white capitalize">
                        Borno
                     </p>
                     </div>
@@ -208,20 +193,20 @@ import Link from 'next/link';
             </div>  
   </div>
 
-  <div className="col-span-12 rounded-lg   sm:col-span-4">
+  <div class="col-span-12 rounded-lg   sm:col-span-4">
     {/* <!-- Sidebar --> */}
     {/* <UserHeader user={user} /> */}
   </div>
-  <div className="col-span-12 rounded-lg border   sm:col-span-8">
+  <div class="col-span-12 rounded-lg border   sm:col-span-8">
     {/* <!-- Main Content --> */}
     {/* <UserEducationDetails />
      */}
-      <div className="relative flex flex-col items-center   rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white  shadow-3xl shadow-shadow-500 p-3">
-                <div className="mt-2 mb-8 w-full">
-                    <h4 className="px-2 text-xl font-bold text-navy-700 dark:text-white">
+      <div class="relative flex flex-col items-center rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white  shadow-3xl shadow-shadow-500 p-3">
+                <div class="mt-2 mb-8 w-full">
+                    <h4 class="px-2 text-xl font-bold text-navy-700 dark:text-white">
                      
                     </h4>
-                    {/* <p className="mt-2 px-2 text-base text-gray-600">
+                    {/* <p class="mt-2 px-2 text-base text-gray-600">
                     As we live, our hearts turn colder. Cause pain is what we go through
                     as we become older. We get insulted by others, lose trust for those
                     others. We get back stabbed by friends. It becomes harder for us to
@@ -229,99 +214,95 @@ import Link from 'next/link';
                     that we give them all...
                     </p> */}
                 </div> 
-                <div className="grid grid-cols-2 gap-4 px-2 w-full">
-                    <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Education</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white capitalize">
+                <div class="grid grid-cols-2 gap-4 px-2 w-full">
+                    <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Education</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
                         {user.instituition}
                     </p>
                     </div>
 
-                    <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Qualification</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white capitalize">
+                    <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Qualification</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white capitalize">
                         {user.qualification}
                     </p>
                     </div>
 
-                    <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Course</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white capitalize">
+                    <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Course</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
                         {user.course}
                     </p>
                     </div>
 
-                    <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Year Graduated</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white capitalize">
+                    <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Year Graduated</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
                         {user.yearofgraduation}
                     </p>
                     </div>
                     {user.indigenefile ? (
-      <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-      <p className="text-sm text-gray-600">Letter of indigene</p>
-      <p className="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2 capitalize">
-        <span>Uploaded</span> <CheckCircleIcon  className="h-6 w-6 text-green-500 " />
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">Letter of indigene</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+        <span>Uploaded</span> <CheckCircleIcon  class="h-6 w-6 text-green-500" />
       </p>
       </div>
     ) : (
       
-      <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-      <p className="text-sm text-gray-600"> Indigene Letter</p>
-      <p className="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
-      <span  onClick={notifyToCompleteApplication} >No Upload</span> 
-      {/* <XCircleIcon className="h-6 w-6 text-red-500 capitalize" /> */}
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600"> Indigene Letter</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
       </p>
       </div>
     )}
                     {user.certificatefile ? (
-      <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-      <p className="text-sm text-gray-600">Certificate</p>
-      <p className="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2 capitalize">
-        <span>Uploaded</span> <CheckCircleIcon  className="h-6 w-6 text-green-500 " />
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">Certificate</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
       </p>
       </div>
     ) : (
       
-      <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-      <p className="text-sm text-gray-600">Certificate</p>
-      <p className="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2 capitalize">
-      <span onClick={notifyToCompleteApplication} >No Upload</span> 
-      {/* <XCircleIcon className="h-6 w-6 text-red-500" /> */}
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">Certificate</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
       </p>
       </div>
     )}
     
     {user.idfile ? (
-      <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-      <p className="text-sm text-gray-600">ID</p>
-      <p className="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2 capitalize">
-        <span>Uploaded</span> <CheckCircleIcon  className="h-6 w-6 text-green-500 " />
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">ID</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
       </p>
       </div>
     ) : (
       
-      <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-      <p className="text-sm text-gray-600">ID</p>
-      <p className="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
-      <span onClick={notifyToCompleteApplication}>No Upload</span> 
-      {/* <XCircleIcon className="h-6 w-6 text-red-500" /> */}
+      <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+      <p class="text-sm text-gray-600">ID</p>
+      <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
+      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
       </p>
       </div>
     )}
-   
 {/* 
 
-                    <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Date of Birth</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white">
+                    <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Date of Birth</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
                         {user.dateofbirth}
                     </p>
                     </div>
 
-                    <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-                    <p className="text-sm text-gray-600">Date of Birth</p>
-                    <p className="text-base font-medium text-navy-700 dark:text-white">
+                    <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Date of Birth</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
                         20 July 1986
                     </p>
                     </div> */}
@@ -330,21 +311,15 @@ import Link from 'next/link';
                 
             </div>  
             
- 
+  </div>
 
-  <div className="col-span-12 rounded-lg border   sm:col-span-8">
-    {/* <!-- Main Content --> */}
-    {/* <UserEducationDetails />
-     */}
-      <div className=" text-center space-x-2 flex rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white  shadow-3xl shadow-shadow-500 p-3">
-      <button className=" bg-green-600 px-2 py-2 rounded-md text-white"onClick={generateAcknowledgeCard} >Download Details</button>
-    <a href="/settings" className=" bg-green-600 px-2 py-2 rounded-md text-white" >Update Profile</a>
 
-   </div>
-   </div>
  
-  
-</div>
+  <div class="footer col-span-12 rounded-lg p-6 text-center">
+    {/* <!-- Footer content --> */}
+    <button className=" bg-green-600 px-2 py-2 rounded-md text-white"onClick={generateAcknowledgeCard} >Download Details</button>
+ 
+  </div>
 </div>
   );
 };
