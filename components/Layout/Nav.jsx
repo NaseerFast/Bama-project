@@ -1,5 +1,5 @@
 import { Avatar } from '@/components/Avatar';
-// import { Button, ButtonLink } from '@/components/Button';
+import { Button, ButtonLink } from '@/components/Button';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { fetcher } from '@/lib/fetch';
 import { useCurrentUser } from '@/lib/user';
@@ -115,17 +115,22 @@ const Nav = () => {
               </>
             ) : (
               <>
-                <div className="text-white opacity-0">
-                  <div> 
+                <Link passHref href="/login">
+                  <ButtonLink
+                    size="small"
+                    type="success"
+                    variant="ghost"
+                    color="link"
+                  >
                     Log in
-                  </div>
-                </div>
+                  </ButtonLink>
+                </Link>
                 <Spacer axis="horizontal" size={0.25} />
-                <div className="text-white opacity-0">
-                  <div> 
-                    Log in
-                  </div>
-                </div>
+                <Link passHref href="/sign-up">
+                  <Button size="small" type="success">
+                    Sign Up
+                  </Button>
+                </Link>
                 {/* <div></div> */}
               </>
             )}
