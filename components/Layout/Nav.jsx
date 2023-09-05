@@ -115,7 +115,7 @@ const Nav = () => {
               </>
             ) : (
               <>
-                <Link passHref href="/login">
+                {/* <Link passHref href="/login">
                   <ButtonLink
                     size="small"
                     type="success"
@@ -130,7 +130,8 @@ const Nav = () => {
                   <Button size="small" type="success">
                     Sign Up
                   </Button>
-                </Link>
+                </Link> */}
+              <div></div>
               </>
             )}
           </Container>
