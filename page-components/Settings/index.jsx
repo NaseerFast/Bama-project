@@ -154,6 +154,17 @@ const AboutYou = ({ user, mutate }) => {
   }, []);
 
 
+  const onCertChange = useCallback((e) => {
+    const file = e.currentTarget.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (l) => {
+      setCertHref(l.currentTarget.result);
+    };
+    reader.readAsDataURL(file);
+  }, []);
+
+
   const onIdChange = useCallback((e) => {
     const file = e.currentTarget.files?.[0];
     if (!file) return;
@@ -166,15 +177,6 @@ const AboutYou = ({ user, mutate }) => {
 
 
 
-  const onCertChange = useCallback((e) => {
-    const file = e.currentTarget.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (l) => {
-      setCertHref(l.currentTarget.result);
-    };
-    reader.readAsDataURL(file);
-  }, []);
 
 
   const [isLoading, setIsLoading] = useState(false);
@@ -262,18 +264,30 @@ const AboutYou = ({ user, mutate }) => {
         <div>
           {/* <span className={styles.label}>Your Indigene Letter</span> */}
 
-          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload Letter of indigene  </label>
-          <input ref={indigenefileRef} class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer  focus:outline-none px-4 py-2" aria-describedby="file_input_help" id="file_input" type="file" />
-          <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF, DOCX, (MAX FILE SIZE. 1 MB).</p>
+          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="file_input">Upload Letter of indigene  </label>
+          <input
+           ref={indigenefileRef} 
+           onChange={onIndigeneChange}
+           accept='.jpg, .jpeg, .pdf, .doc, .docx'
+           className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg 
+           cursor-pointer  focus:outline-none px-4 py-2" aria-describedby="indigene_file_input" 
+           id="indigene_file_input" type="file" />
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-300" 
+          id="file_input_help">PDF, DOCX, (MAX FILE SIZE. 1 MB).</p>
 
           <Spacer size={1.5} axis="vertical" />
         </div>
         <div>
           {/* <span className={styles.label}>Your Indigene Letter</span> */}
 
-          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload BSC / NCE Certificate</label>
-          <input ref={certificatefileRef} class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer  focus:outline-none px-4 py-2" aria-describedby="file_input_help" id="file_input" type="file" />
-          <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF, DOCX, (MAX FILE SIZE. 1 MB).</p>
+          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="file_input">Upload BSC / NCE Certificate</label>
+          <input ref={certificatefileRef} 
+          onChange={onCertChange}
+          accept='.jpg, .jpeg, .pdf, .doc, .docx'
+          className="block w-full text-sm text-gray-900 border border-gray-300 
+          rounded-lg cursor-pointer  focus:outline-none px-4 py-2" aria-describedby="certificate_file_input" 
+          id="certificate_file_input" type="file" />
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF, DOCX, (MAX FILE SIZE. 1 MB).</p>
 
           <Spacer size={1.5} axis="vertical" />
         </div>
@@ -283,7 +297,7 @@ const AboutYou = ({ user, mutate }) => {
           {/* <FileAvatar size={96} username={user.username} url={certHref} /> *
           <input
             aria-label="Your Certificate"
-            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer  focus:outline-none px-4 py-2"
+            className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer  focus:outline-none px-4 py-2"
             type="file"
             accept="image/*"
             ref={certificatefileRef}
@@ -295,9 +309,14 @@ const AboutYou = ({ user, mutate }) => {
         <div>
           {/* <span className={styles.label}>Your Indigene Letter</span> */}
 
-          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload National ID / Drivers Liscence </label>
-          <input ref={idfileRef} class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer  focus:outline-none px-4 py-2" aria-describedby="file_input_help" id="file_input" type="file" />
-          <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF, DOCX, (MAX FILE SIZE. 1 MB).</p>
+          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="id_file_input">Upload National ID / Drivers Liscence </label>
+          <input ref={idfileRef} 
+          onChange={onIdChange}
+          accept='.jpg, .jpeg, .pdf, .doc, .docx'
+           className="block w-full text-sm text-gray-900 border border-gray-300 
+           rounded-lg cursor-pointer  focus:outline-none px-4 py-2" 
+           aria-describedby="file_input_help" id="file_input" type="file" />
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-300" id="ID_file_input_help">PDF, DOCX, (MAX FILE SIZE. 1 MB).</p>
 
           <Spacer size={0.5} axis="vertical" />
         </div>
