@@ -262,7 +262,7 @@ import { CheckCircleIcon , XCircleIcon  } from '@heroicons/react/24/solid';
       <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
       <p class="text-sm text-gray-600">Certificate</p>
       <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
-      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
+      <span>Uploaded</span> <CheckCircleIcon  class="h-6 w-6 text-green-500" />
       </p>
       </div>
     ) : (
@@ -279,7 +279,7 @@ import { CheckCircleIcon , XCircleIcon  } from '@heroicons/react/24/solid';
       <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
       <p class="text-sm text-gray-600">ID</p>
       <p class="text-base font-medium text-navy-700 dark:text-white inline-flex space-x-2">
-      <span>No Upload</span> <XCircleIcon class="h-6 w-6 text-red-500" />
+      <span>Uploaded</span> <CheckCircleIcon  class="h-6 w-6 text-green-500" />
       </p>
       </div>
     ) : (

@@ -13,11 +13,11 @@ const UserHeader = ({ user }) => {
             <p><strong>Email:</strong> johndoe@example.com</p>
             <p><strong>Location:</strong> New York, USA</p> */}
             <div class="bg-white py-3 border-t-4 border-green-400 px-4">
-                    <div class="image overflow-hidden">
+                    {/* <div class="image overflow-hidden">
                         <img class="h-auto w-full mx-auto"
                             src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
                             alt=""/>
-                    </div>
+                    </div> */}
                     <h2 className="text-xl font-semibold mb-4">
                      @{user.username}</h2>
                     {/* <h3 class="text-gray-600 font-lg text-semibold leading-6 mb-2">Owner at Her Company Inc.</h3> */}
