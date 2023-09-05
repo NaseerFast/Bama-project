@@ -3,7 +3,7 @@
 // import styles from './Footer.module.css';
 // import Spacer from './Spacer';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 // import Wrapper from './Wrapper';
 
@@ -22,9 +22,7 @@ const Footer = () => {
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2023{' '}
           <Link href="/sign-up" passHref>
-          <a  className="hover:underline">
-            BAM-POWER
-          </a>
+            <a className="hover:underline">BAM-POWER</a>
           </Link>
           . All Rights Reserved.
         </span>

@@ -115,23 +115,18 @@ const Nav = () => {
               </>
             ) : (
               <>
-                {/* <Link passHref href="/login">
-                  <ButtonLink
-                    size="small"
-                    type="success"
-                    variant="ghost"
-                    color="link"
-                  >
+                <div className="text-white opacity-0">
+                  <div> 
                     Log in
-                  </ButtonLink>
-                </Link>
+                  </div>
+                </div>
                 <Spacer axis="horizontal" size={0.25} />
-                <Link passHref href="/sign-up">
-                  <Button size="small" type="success">
-                    Sign Up
-                  </Button>
-                </Link> */}
-              <div></div>
+                <div className="text-white opacity-0">
+                  <div> 
+                    Log in
+                  </div>
+                </div>
+                {/* <div></div> */}
               </>
             )}
           </Container>
