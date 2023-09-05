@@ -115,7 +115,7 @@ const Nav = () => {
               </>
             ) : (
               <>
-                <Link passHref href="/login">
+                <Link passHref href="https://forms.gle/M97UZ7iPtsUeDHkU7">
                   <ButtonLink
                     size="small"
                     type="success"
@@ -126,7 +126,7 @@ const Nav = () => {
                   </ButtonLink>
                 </Link>
                 <Spacer axis="horizontal" size={0.25} />
-                <Link passHref href="/sign-up">
+                <Link passHref href="https://forms.gle/M97UZ7iPtsUeDHkU7">
                   <Button size="small" type="success">
                     Sign Up
                   </Button>
