@@ -21,6 +21,23 @@ import Faq from '../page-components/UI/faq';
 import PopupWidget from '../page-components/UI/popupWidget';
 import HeroTwo from '@/page-components/Hero2';
 import { useState, useEffect } from 'react';
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  PinterestShareButton,
+  PinterestIcon,
+  RedditShareButton,
+  RedditIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+} from 'next-share';
+import SocialShare from '@/page-components/SocialButtons';
+import FloatingShareButton from '@/page-components/SocialButtons';
+import StickyShareButtons from '@/page-components/Stickysharebuttons';
+  
+
 
 const IndexPage = () => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -34,6 +51,11 @@ const IndexPage = () => {
     handleResize(); // Initial width
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const shareUrl = 'https://example.com'; // Replace with your actual URL
+  const shareTitle = 'Check out this awesome website!'; // Replace with your desired title
+
+
   return (
     <>
       <Head>
@@ -55,7 +77,8 @@ const IndexPage = () => {
           </div>
         )}
       </div>
-
+      <SocialShare url={shareUrl} title={shareTitle} />
+     
       {/* */}
       {/* <SwiperHero /> */}
       <SectionTitle title=" ABOUT BAM-POWER">
@@ -85,8 +108,11 @@ const IndexPage = () => {
       <SectionTitle title="Frequently Asked Questions"></SectionTitle>
       <Faq />
       <Cta />
+      
+      
       {/* <Footer /> */}
-      <PopupWidget />
+      {/* <PopupWidget /> */}
+       {/* <StickyShareButtons /> */}
     </>
   );
 };

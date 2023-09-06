@@ -34,6 +34,12 @@ const Layout = ({ children }) => {
         />
         <meta property="og:image" content="URL_to_your_image.jpg" />
         <meta property="og:url" content="URL_to_your_webapp" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha384-0v/uFCEbAQv8IfInUpHSmZHlpjx5F5Tqf5n5u6MTf3jHp8kO4Ck5Bd2jYr5b8Jzq5"
+          crossOrigin="anonymous"
+        />
       </Head>
       <Nav />
       <main className={styles.main}>{children}</main>
