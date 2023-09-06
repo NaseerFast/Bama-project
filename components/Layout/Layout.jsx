@@ -34,7 +34,6 @@ const Layout = ({ children }) => {
         />
         <meta property="og:image" content="URL_to_your_image.jpg" />
         <meta property="og:url" content="URL_to_your_webapp" />
-        
       </Head>
       <Nav />
       <main className={styles.main}>{children}</main>

@@ -18,7 +18,7 @@ import Statements from '../page-components/UI/statements';
 import Testimonials from '../page-components/UI/testimonials';
 import Cta from '../page-components/UI/cta';
 import Faq from '../page-components/UI/faq';
-import PopupWidget from '../page-components/UI/popupWidget';
+// import PopupWidget from '../page-components/UI/popupWidget';
 import HeroTwo from '@/page-components/Hero2';
 import { useState, useEffect } from 'react';
 import SocialShare from '@/page-components/SocialButtons';
